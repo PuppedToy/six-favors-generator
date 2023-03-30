@@ -68,7 +68,8 @@ function getTextBuffer(text, lord) {
       .toBuffer();
 }
 
-async function generateCard(lord, rarity, cardImagePath, text, outputPath) {
+async function generateCard(lord, rarity, cardImagePath, text, useText, playText, outputPath) {
+  // @TODO useText & playText
   try {
     const cardFramePath = getCardFramePath(lord, rarity);
     const { width, height } = await sharp(cardFramePath).metadata();
@@ -118,12 +119,19 @@ async function generateCard(lord, rarity, cardImagePath, text, outputPath) {
 }
 
 const CARD_IMAGE_PATH = './tests/CardImage.png';
-const OUTPUT_PATH = 'output.png';
 
 const rarities = ['common', 'rare', 'epic', 'legendary'];
 
 Object.keys(lords).forEach((lord) => {
   rarities.forEach((rarity) => {
-    generateCard(lord, rarity, CARD_IMAGE_PATH, '2', `./tests/out/${lord}-${rarity}.png`);
+    generateCard(
+      lord,
+      rarity,
+      CARD_IMAGE_PATH,
+      '2',
+      'Draw 5 cards to give 2 card.',
+      'Whenever anyone gives a card, you have priority. If you were not the target, draw a card.',
+      `./tests/out/${lord}-${rarity}.png`
+    );
   });
 });
