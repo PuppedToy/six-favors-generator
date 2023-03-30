@@ -32,11 +32,11 @@ function getCardFramePath(lord, rarity) {
   return `./frames/${firstLetterToUpperCase(lord)}${firstLetterToUpperCase(rarity)}.png`;
 }
 
-function getTextBuffer(text, lord) {
-    // Calculate the position and size of the text overlay
-    const textWidth = 20;
-    const textHeight = 20;
-  
+function getColorTextBuffer(text, lord) {
+  return getTextBuffer(text, lords[lord].costColor, 20, 20);
+}
+
+function getTextBuffer(text, color, textWidth, textHeight) {  
     // Create an SVG element
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${textWidth}" height="${textHeight}">
       <style>
@@ -90,12 +90,11 @@ async function generateCard(lord, rarity, cardImagePath, text, useText, playText
       .resize(overlayWidth, overlayHeight)
       .toBuffer();
 
-    const textWidth = 25;
-    const textTop = 2;
-    const textLeft = width - textWidth - 16;
-    const textImage = getTextBuffer(text, lord);
+    const costTextTop = 2;
+    const costTextLeft = width - textWidth - 41;
+    const costTextImage = getColorTextBuffer(text, lord);
 
-    const [frameBuffer, imageBuffer, textBuffer] = await Promise.all([frameResizer, imageResizer, textImage]);
+    const [frameBuffer, imageBuffer, costTextBuffer] = await Promise.all([frameResizer, imageResizer, costTextImage]);
     
     // Composite the CardImage with the CardFrame
     await sharp(frameBuffer)
@@ -106,9 +105,9 @@ async function generateCard(lord, rarity, cardImagePath, text, useText, playText
             left: overlayLeft,
             blend: 'dest-over',
         },{ 
-            input: textBuffer, 
-            top: textTop, 
-            left: textLeft, 
+            input: costTextBuffer, 
+            top: costTextTop, 
+            left: costTextLeft, 
         }])
       .toFile(outputPath);
       
