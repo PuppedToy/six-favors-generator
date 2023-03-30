@@ -1,26 +1,32 @@
 const sharp = require('sharp');
-const path = require('path');
+const wordwrap = require('wordwrap');
 
-const COST_FONT = path.join(__dirname, 'fonts', 'MedievalSharp-Regular.ttf');
+const WORD_WRAP_THRESHOLD = 42;
 
 const lords = {
   gaidda: {
     costColor: '#B1CAB1',
+    textColor: '#2A5A25',
   },
   noumi: {
     costColor: '#FBF8D9',
+    textColor: '#5A5925',
   },
   ysault: {
     costColor: '#FBD9D9',
+    textColor: '#5A2525',
   },
   seraneri: {
     costColor: '#D9F8FB',
+    textColor: '#252A5A',
   },
   boumandow: {
     costColor: 'white',
+    textColor: '#55255A',
   },
   hesif: {
     costColor: '#D7B5FC',
+    textColor: '#D7B5FC',
   },
 };
 
@@ -33,32 +39,40 @@ function getCardFramePath(lord, rarity) {
 }
 
 function getColorTextBuffer(text, lord) {
-  return getTextBuffer(text, lords[lord].costColor, 20, 20);
+  return getTextBuffer(text, lords[lord].costColor, {
+    textHeight: 20,
+    textWidth: 20,
+    fontSize: 10,
+  });
 }
 
-function getTextBuffer(text, color, textWidth, textHeight) {  
+function getCardTextBuffer(text, lord) {
+  return getTextBuffer(`     ${text}`, lords[lord].textColor, {
+    textHeight: 50,
+    textWidth: 78,
+    fontSize: 4,
+    fontFamily: 'Arial',
+  });
+}
+
+function getTextBuffer(text, color, {textWidth, textHeight, fontSize, fontFamily}) {
+    const wrap = wordwrap(WORD_WRAP_THRESHOLD, {cut: true});
+
+    // Break the text into multiple lines
+    const wrappedText = wrap(text);
+
     // Create an SVG element
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${textWidth}" height="${textHeight}">
       <style>
-        @font-face {
-          font-family: 'MedievalSharp';
-          src: url('fonts/MedievalSharp.eot');
-          src: url('fonts/MedievalSharp.eot?#iefix') format('embedded-opentype'),
-              url('fonts/MedievalSharp.woff2') format('woff2'),
-              url('fonts/MedievalSharp.woff') format('woff'),
-              url('fonts/MedievalSharp.ttf') format('truetype'),
-              url('fonts/MedievalSharp.svg#MedievalSharp') format('svg');
-          font-weight: 500;
-          font-style: normal;
-          font-display: swap;
-        }   
+        @import url("https://fonts.googleapis.com/css2?family=MedievalSharp"); 
         text {
-          font-family: 'MedievalSharp';
-          font-size: 10px;
-          fill: ${color}};
+          white-space: pre;
+          font-size: ${fontSize}px;
+          font-weight: bold;
+          fill: ${color};
         }
       </style>
-      <text x="0" y="${textHeight / 2}">${text}</text>
+      ${wrappedText.split('\n').map((line, index) => `<text xml:space="preserve" font-family="${fontFamily || 'MedievalSharp'}" x="0" y="${(index+1) * fontSize}">${line}</text>`).join('\n')}
     </svg>`;
   
     // Convert the SVG to a buffer that sharp can use
@@ -66,6 +80,13 @@ function getTextBuffer(text, color, textWidth, textHeight) {
     return sharp(textImageBuffer, { density: 300 })
       .png()
       .toBuffer();
+}
+
+function getIconBuffer(lord, type) {
+  const iconPath = `./icons/${type}_${lord}.png`;
+  return sharp(iconPath)
+    .resize(18, 18)
+    .toBuffer();
 }
 
 async function generateCard(lord, rarity, cardImagePath, text, useText, playText, outputPath) {
@@ -94,8 +115,31 @@ async function generateCard(lord, rarity, cardImagePath, text, useText, playText
     const costTextLeft = width - 41;
     const costTextImage = getColorTextBuffer(text, lord);
 
-    const [frameBuffer, imageBuffer, costTextBuffer] = await Promise.all([frameResizer, imageResizer, costTextImage]);
-    
+    const useTextImage = getCardTextBuffer(useText, lord);
+    const useIconImage = getIconBuffer(lord, 'use');
+    const playTextImage = getCardTextBuffer(playText, lord);
+    const playIconImage = getIconBuffer(lord, 'play');
+
+    const [
+      frameBuffer,
+      imageBuffer,
+      costTextBuffer,
+      useTextBuffer,
+      playTextBuffer,
+      useIconBuffer,
+      playIconBuffer,
+    ] = await Promise.all([
+      frameResizer,
+      imageResizer,
+      costTextImage,
+      useTextImage,
+      playTextImage,
+      useIconImage,
+      playIconImage,
+    ]);
+    const textTop = 260;
+    const textLeft = 30;
+
     // Composite the CardImage with the CardFrame
     await sharp(frameBuffer)
       .composite([
@@ -108,6 +152,22 @@ async function generateCard(lord, rarity, cardImagePath, text, useText, playText
             input: costTextBuffer, 
             top: costTextTop, 
             left: costTextLeft, 
+        },{
+            input: useTextBuffer,
+            top: textTop,
+            left: textLeft,
+        },{
+            input: playTextBuffer,
+            top: textTop + 40,
+            left: textLeft,
+        },{
+            input: useIconBuffer,
+            top: textTop + 2,
+            left: textLeft,
+        },{
+            input: playIconBuffer,
+            top: textTop + 42,
+            left: textLeft,
         }])
       .toFile(outputPath);
       
