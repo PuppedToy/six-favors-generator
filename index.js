@@ -55,7 +55,7 @@ function getTextBuffer(text, color, textWidth, textHeight) {
         text {
           font-family: 'MedievalSharp';
           font-size: 10px;
-          fill: ${lords[lord].costColor}};
+          fill: ${color}};
         }
       </style>
       <text x="0" y="${textHeight / 2}">${text}</text>
@@ -91,7 +91,7 @@ async function generateCard(lord, rarity, cardImagePath, text, useText, playText
       .toBuffer();
 
     const costTextTop = 2;
-    const costTextLeft = width - textWidth - 41;
+    const costTextLeft = width - 41;
     const costTextImage = getColorTextBuffer(text, lord);
 
     const [frameBuffer, imageBuffer, costTextBuffer] = await Promise.all([frameResizer, imageResizer, costTextImage]);
