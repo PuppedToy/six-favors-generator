@@ -1,0 +1,100 @@
+{
+    "noumi": [
+        {
+            "name": "Banker Gnome",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "Earn 3 coins.",
+            "playText": "Whenever you earn coins, charge one. As an action, uncharge 5 to earn 3 coins."
+        },
+        {
+            "name": "Traveling Salesman",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "Earn 3 coins.",
+            "playText": "Whenever you draw a card, you may discard it to earn 3 coins."
+        },
+        {
+            "name": "Lake of Riches",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "Earn 3 coins.",
+            "playText": "Whenever you lose coins, charge 1. As an action, uncharge 3 to deal 1 damage."
+        },
+        {
+            "name": "Humble Noble",
+            "rarity": "rare",
+            "cost": 9,
+            "hp": 4,
+            "useText": "Steal 4 coins.",
+            "playText": "Whenever you lose coins, charge 1. If this has 3 counters, uncharge it to steal a coin."
+        },
+        {
+            "name": "Greedy Wizard",
+            "rarity": "rare",
+            "cost": 9,
+            "hp": 4,
+            "useText": "Invest 4 coins.",
+            "playText": "Whenever you profit, profit 1 extra for every 3 coins of profit."
+        },
+        {
+            "name": "Mercenary",
+            "rarity": "rare",
+            "cost": 7,
+            "hp": 4,
+            "useText": "Lose 4 coins to deal 1 damage twice.",
+            "playText": "As an action, lose 3 coins to deal 1 damage."
+        },
+        {
+            "name": "Shiny Knight",
+            "rarity": "rare",
+            "cost": 8,
+            "hp": 4,
+            "useText": "Each other player loses 3 coins.",
+            "playText": "Whenever you use coins, charge 1. If this has 3, uncharge it to make a player lose 3 coins."
+        },
+        {
+            "name": "Royal Mint",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "Earn 7 coins.",
+            "playText": "At the end of the turn, earn a coin."
+        },
+        {
+            "name": "Edenwr: Duke of Einde",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "Steal 5 coins.",
+            "playText": "Whenever a player plays a card, steal 1 from that player."
+        },
+        {
+            "name": "Anangith: High Inquisitor",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "Sacrifice a card you own to earn 15 coins.",
+            "playText": "Whenever a card you own dies, earn 5 coins."
+        },
+        {
+            "name": "Beggar",
+            "rarity": "epic",
+            "cost": 3,
+            "hp": 2,
+            "useText": "Earn 3 coins to make every player earn 3 coins.",
+            "playText": "Whenever you earn coins, charge one. If this has 6, sacrifice this and earn 18."
+        },
+        {
+            "name": "Veynu: Dragon of Greed",
+            "rarity": "legendary",
+            "cost": 16,
+            "hp": 6,
+            "useText": "A powerful use effect.",
+            "playText": "A powerful play effect."
+        }
+    ]
+}

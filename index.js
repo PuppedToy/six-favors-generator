@@ -1,6 +1,8 @@
 const sharp = require('sharp');
 const wordwrap = require('wordwrap');
 
+const cards = require('./cards.json');
+
 const WORD_WRAP_THRESHOLD = 42;
 
 const lords = {
@@ -38,11 +40,19 @@ function getCardFramePath(lord, rarity) {
   return `./frames/${firstLetterToUpperCase(lord)}${firstLetterToUpperCase(rarity)}.png`;
 }
 
-function getColorTextBuffer(text, lord) {
+function getCostTextBuffer(text, lord) {
   return getTextBuffer(text, lords[lord].costColor, {
     textHeight: 20,
     textWidth: 20,
     fontSize: 10,
+  });
+}
+
+function getHPTextBuffer(text, lord) {
+  return getTextBuffer(text, lords[lord].costColor, {
+    textHeight: 20,
+    textWidth: 20,
+    fontSize: 8,
   });
 }
 
@@ -89,7 +99,7 @@ function getIconBuffer(lord, type) {
     .toBuffer();
 }
 
-async function generateCard(lord, rarity, cardImagePath, text, useText, playText, outputPath) {
+async function generateCard(lord, rarity, cardImagePath, costText, hpText, useText, playText, outputPath) {
   // @TODO useText & playText
   try {
     const cardFramePath = getCardFramePath(lord, rarity);
@@ -113,7 +123,10 @@ async function generateCard(lord, rarity, cardImagePath, text, useText, playText
 
     const costTextTop = 2;
     const costTextLeft = width - 41;
-    const costTextImage = getColorTextBuffer(text, lord);
+    const hpTextTop = 470;
+    const hpTextLeft = 68;
+    const costTextImage = getCostTextBuffer(costText, lord);
+    const hpTextImage = getHPTextBuffer(hpText, lord);
 
     const useTextImage = getCardTextBuffer(useText, lord);
     const useIconImage = getIconBuffer(lord, 'use');
@@ -128,6 +141,7 @@ async function generateCard(lord, rarity, cardImagePath, text, useText, playText
       playTextBuffer,
       useIconBuffer,
       playIconBuffer,
+      hpTextBuffer,
     ] = await Promise.all([
       frameResizer,
       imageResizer,
@@ -136,6 +150,7 @@ async function generateCard(lord, rarity, cardImagePath, text, useText, playText
       playTextImage,
       useIconImage,
       playIconImage,
+      hpTextImage,
     ]);
     const textTop = 260;
     const textLeft = 30;
@@ -152,6 +167,10 @@ async function generateCard(lord, rarity, cardImagePath, text, useText, playText
             input: costTextBuffer, 
             top: costTextTop, 
             left: costTextLeft, 
+        },{
+          input: hpTextBuffer, 
+          top: hpTextTop, 
+          left: hpTextLeft, 
         },{
             input: useTextBuffer,
             top: textTop,
@@ -181,16 +200,32 @@ const CARD_IMAGE_PATH = './tests/CardImage.png';
 
 const rarities = ['common', 'rare', 'epic', 'legendary'];
 
-Object.keys(lords).forEach((lord) => {
-  rarities.forEach((rarity) => {
+// Object.keys(lords).forEach((lord) => {
+//   rarities.forEach((rarity) => {
+//     generateCard(
+//       lord,
+//       rarity,
+//       CARD_IMAGE_PATH,
+//       '8',
+//       '2',
+//       'Draw 5 cards to give 2 card.',
+//       'Whenever anyone gives a card, you have priority. If you were not the target, draw a card.',
+//       `./tests/out/${lord}-${rarity}.png`
+//     );
+//   });
+// });
+
+Object.entries(cards).forEach(([lord, lordCards]) => {
+  lordCards.forEach((card, index) => {
     generateCard(
       lord,
-      rarity,
-      CARD_IMAGE_PATH,
-      '2',
-      'Draw 5 cards to give 2 card.',
-      'Whenever anyone gives a card, you have priority. If you were not the target, draw a card.',
-      `./tests/out/${lord}-${rarity}.png`
+      card.rarity,
+      `cardImages/${lord}_${index}.png`,
+      card.cost,
+      card.hp,
+      card.useText,
+      card.playText,
+      `./tests/out/${index}_${lord}.png`
     );
   });
 });
