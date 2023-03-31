@@ -1,4 +1,102 @@
 {
+    "gaidda": [
+        {
+            "name": "Black Cat",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "Draw a card.",
+            "playText": "Whenever you draw a card, charge 1. As an action, uncharge 5 to draw a card."
+        },
+        {
+            "name": "Elven Librarian",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "Draw a card.",
+            "playText": "Whenever you discard a card, charge 1. As an action, uncharge 3 to draw a card."
+        },
+        {
+            "name": "Lake of Purity",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "Draw a card.",
+            "playText": "Whenever you draw a card, earn a coin."
+        },
+        {
+            "name": "Greedy Vulture",
+            "rarity": "rare",
+            "cost": 8,
+            "hp": 4,
+            "useText": "Trade a card to earn 3 coins.",
+            "playText": "As an action, give a card to earn 4 coins."
+        },
+        {
+            "name": "Lonely Wolf",
+            "rarity": "rare",
+            "cost": 7,
+            "hp": 4,
+            "useText": "Give a card to earn 5 coins.",
+            "playText": "Whenever a card is given to other player, earn a coin."
+        },
+        {
+            "name": "Elven Hunter",
+            "rarity": "rare",
+            "cost": 9,
+            "hp": 4,
+            "useText": "Discard a card to deal 2 damage.",
+            "playText": "Whenever you discard a card, deal 1 damage."
+        },
+        {
+            "name": "Poisonous Spider",
+            "rarity": "rare",
+            "cost": 9,
+            "hp": 4,
+            "useText": "Make someone discard 2 cards.",
+            "playText": "Whenever you make someone discard a card, draw a card."
+        },
+        {
+            "name": "Omont: The Bear King",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "Deal 2 damage to force the owner to discard a card.",
+            "playText": "Whenever you deal 2 or more damage, force the target's owner to discard a card."
+        },
+        {
+            "name": "Haund: Ancient Tree",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "Draw 2 cards from either the deck or the discard pile.",
+            "playText": "As an action, pay a coin to draw a card from the discard pile."
+        },
+        {
+            "name": "Sokel: Druid of Gaidda",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "Draw 5 cards to give 2 cards.",
+            "playText": "Whenever anyone gives a card, you have priority. If you weren't the target, draw a card."
+        },
+        {
+            "name": "Baby Sapling",
+            "rarity": "epic",
+            "cost": 3,
+            "hp": 2,
+            "useText": "Draw a card to make every player draw a card",
+            "playText": "Whenever you draw a card, charge one. If this has 6, sacrifice this to draw 6."
+        },
+        {
+            "name": "Wanta: Dragon of Life",
+            "rarity": "legendary",
+            "cost": 16,
+            "hp": 6,
+            "useText": "Draw a card from any graveyard 3 times.",
+            "playText": "Whenever a player obtains a card from any source, you may discard a card to force that player to give you that card."
+        }
+    ],
     "noumi": [
         {
             "name": "Banker Gnome",
@@ -95,6 +193,398 @@
             "hp": 6,
             "useText": "A powerful use effect.",
             "playText": "A powerful play effect."
+        }
+    ],
+    "ysault": [
+        {
+            "name": "Blacksmith",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "War Horse",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Lake of Power",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Berserker",
+            "rarity": "rare",
+            "cost": 9,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Elite Archer",
+            "rarity": "rare",
+            "cost": 9,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "War Mage",
+            "rarity": "rare",
+            "cost": 7,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Dread Catapult",
+            "rarity": "rare",
+            "cost": 8,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Hisju: Hired Assassin",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Edoura: Necromancer",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Orsonn: Ysault's General",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Rookie Squire",
+            "rarity": "epic",
+            "cost": 3,
+            "hp": 2,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Nethse: Dragon of War",
+            "rarity": "legendary",
+            "cost": 16,
+            "hp": 6,
+            "useText": "",
+            "playText": ""
+        }
+    ],
+    "seraneri": [
+        {
+            "name": "Streets Informant",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Clairvoyant",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Lake of Knowledge",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Magic Tinkerer",
+            "rarity": "rare",
+            "cost": 9,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Old Wizard",
+            "rarity": "rare",
+            "cost": 9,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Plarath's Apprentice",
+            "rarity": "rare",
+            "cost": 7,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Magic Swordsman",
+            "rarity": "rare",
+            "cost": 8,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Ghenbe: The Dragon Summoner",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Simsi: The Time Weaver",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Plarath: Grand Archmage",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Unreadable Spellbook",
+            "rarity": "epic",
+            "cost": 3,
+            "hp": 2,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Mithes: Dragon of Magic",
+            "rarity": "legendary",
+            "cost": 16,
+            "hp": 6,
+            "useText": "",
+            "playText": ""
+        }
+    ],
+    "boumandow": [
+        {
+            "name": "Convenient NPC",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Suspicious Beverage",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Lake of Mystery",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Forbidden Ritual",
+            "rarity": "rare",
+            "cost": 9,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Pandora's Box",
+            "rarity": "rare",
+            "cost": 9,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Exiled Warlock",
+            "rarity": "rare",
+            "cost": 7,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Unleashed Genie",
+            "rarity": "rare",
+            "cost": 8,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Andis: The Tempest Caller",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Herkil: Hesif's Herald",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Meathegs: Bumandow's Prophet",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Mysterious Chest",
+            "rarity": "epic",
+            "cost": 3,
+            "hp": 2,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Hedreada: Dragon of Chaos",
+            "rarity": "legendary",
+            "cost": 16,
+            "hp": 6,
+            "useText": "",
+            "playText": ""
+        }
+    ],
+    "hesif": [
+        {
+            "name": "Trapped Chest",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Poison Dealer",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Lake of Decay",
+            "rarity": "common",
+            "cost": 6,
+            "hp": 3,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Undead Horse",
+            "rarity": "rare",
+            "cost": 9,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Corrupted Noble",
+            "rarity": "rare",
+            "cost": 9,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Demonic Portal",
+            "rarity": "rare",
+            "cost": 7,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Possessed Child",
+            "rarity": "rare",
+            "cost": 8,
+            "hp": 4,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Avicath: Failed Experiment",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Sze: Assassin Shade",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Fronnavou: Cursed King",
+            "rarity": "epic",
+            "cost": 12,
+            "hp": 5,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Evil Sapling",
+            "rarity": "epic",
+            "cost": 3,
+            "hp": 2,
+            "useText": "",
+            "playText": ""
+        },
+        {
+            "name": "Porasmes: Dragon of Corruption",
+            "rarity": "legendary",
+            "cost": 16,
+            "hp": 6,
+            "useText": "",
+            "playText": ""
         }
     ]
 }

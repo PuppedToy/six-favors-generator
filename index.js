@@ -242,7 +242,7 @@ Object.entries(cards).forEach(([lord, lordCards]) => {
       card.hp,
       card.useText,
       card.playText,
-      `./tests/out/${index}_${lord}.png`
+      `./tests/out/${lord}_${index}.png`
     );
   });
 });
