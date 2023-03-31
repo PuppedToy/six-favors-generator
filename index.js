@@ -32,20 +32,26 @@ const lords = {
   },
 };
 
-function firstLetterToUpperCase(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 function getCardFramePath(lord, rarity) {
-  return `./frames/${firstLetterToUpperCase(lord)}${firstLetterToUpperCase(rarity)}.png`;
+  return `./frames/frame_${lord}_${rarity}.png`;
 }
 
 function getCostTextBuffer(text, lord) {
-  return getTextBuffer(text, lords[lord].costColor, {
-    textHeight: 20,
-    textWidth: 20,
-    fontSize: 10,
-  });
+  if (String(text).length === 1) {
+    return { text: getTextBuffer(text, lords[lord].costColor, {
+      textHeight: 20,
+      textWidth: 20,
+      fontSize: 10,
+      fontWeight: 'default',
+    }), top: 0, left: 0 };
+  } else {
+    return { text: getTextBuffer(text, lords[lord].costColor, {
+      textHeight: 20,
+      textWidth: 20,
+      fontSize: 8,
+      fontWeight: 'default',
+    }), top: 6, left: -7 };
+  }
 }
 
 function getHPTextBuffer(text, lord) {
@@ -53,7 +59,28 @@ function getHPTextBuffer(text, lord) {
     textHeight: 20,
     textWidth: 20,
     fontSize: 8,
+    fontWeight: 'default',
   });
+}
+
+function getNameFontSize(text) {
+  const MAX_TEXT_LENGTH = 15;
+  const LETTERS_PER_FONT_SIZE = 3;
+  const diff = Math.max(0, text.length - MAX_TEXT_LENGTH);
+  const fontSize = Math.max(4, 8 - parseInt(diff / LETTERS_PER_FONT_SIZE));
+  const top = diff;
+  return { fontSize, top };
+}
+
+function getNameBuffer(text, lord) {
+  const { fontSize, top } = getNameFontSize(text);
+
+  return { text: getTextBuffer(text, lords[lord].costColor, {
+    textHeight: 30,
+    textWidth: 78,
+    fontSize,
+    fontWeight: 'default',
+  }), top };
 }
 
 function getCardTextBuffer(text, lord) {
@@ -65,7 +92,7 @@ function getCardTextBuffer(text, lord) {
   });
 }
 
-function getTextBuffer(text, color, {textWidth, textHeight, fontSize, fontFamily}) {
+function getTextBuffer(text, color, {textWidth, textHeight, fontSize, fontFamily, fontWeight}) {
     const wrap = wordwrap(WORD_WRAP_THRESHOLD, {cut: true});
 
     // Break the text into multiple lines
@@ -78,7 +105,7 @@ function getTextBuffer(text, color, {textWidth, textHeight, fontSize, fontFamily
         text {
           white-space: pre;
           font-size: ${fontSize}px;
-          font-weight: bold;
+          font-weight: ${fontWeight || 'bold'};
           fill: ${color};
         }
       </style>
@@ -99,8 +126,7 @@ function getIconBuffer(lord, type) {
     .toBuffer();
 }
 
-async function generateCard(lord, rarity, cardImagePath, costText, hpText, useText, playText, outputPath) {
-  // @TODO useText & playText
+async function generateCard(lord, rarity, cardImagePath, name, costText, hpText, useText, playText, outputPath) {
   try {
     const cardFramePath = getCardFramePath(lord, rarity);
     const { width, height } = await sharp(cardFramePath).metadata();
@@ -121,12 +147,15 @@ async function generateCard(lord, rarity, cardImagePath, costText, hpText, useTe
       .resize(overlayWidth, overlayHeight)
       .toBuffer();
 
-    const costTextTop = 2;
-    const costTextLeft = width - 41;
     const hpTextTop = 470;
     const hpTextLeft = 68;
-    const costTextImage = getCostTextBuffer(costText, lord);
+    const nameTextLeft = 25;
+    const { text: costTextImage, top: extraCostTop, left: extraCostLeft } = getCostTextBuffer(costText, lord);
     const hpTextImage = getHPTextBuffer(hpText, lord);
+    const { text: nameTextImage, top: extraNameTop } = getNameBuffer(name, lord);
+    const nameTextTop = 30 + extraNameTop;
+    const costTextTop = 2 + extraCostTop;
+    const costTextLeft = width - 41 + extraCostLeft;
 
     const useTextImage = getCardTextBuffer(useText, lord);
     const useIconImage = getIconBuffer(lord, 'use');
@@ -142,6 +171,7 @@ async function generateCard(lord, rarity, cardImagePath, costText, hpText, useTe
       useIconBuffer,
       playIconBuffer,
       hpTextBuffer,
+      nameTextBuffer,
     ] = await Promise.all([
       frameResizer,
       imageResizer,
@@ -151,6 +181,7 @@ async function generateCard(lord, rarity, cardImagePath, costText, hpText, useTe
       useIconImage,
       playIconImage,
       hpTextImage,
+      nameTextImage,
     ]);
     const textTop = 260;
     const textLeft = 30;
@@ -167,6 +198,10 @@ async function generateCard(lord, rarity, cardImagePath, costText, hpText, useTe
             input: costTextBuffer, 
             top: costTextTop, 
             left: costTextLeft, 
+        },{
+          input: nameTextBuffer, 
+          top: nameTextTop, 
+          left: nameTextLeft, 
         },{
           input: hpTextBuffer, 
           top: hpTextTop, 
@@ -196,31 +231,13 @@ async function generateCard(lord, rarity, cardImagePath, costText, hpText, useTe
   }
 }
 
-const CARD_IMAGE_PATH = './tests/CardImage.png';
-
-const rarities = ['common', 'rare', 'epic', 'legendary'];
-
-// Object.keys(lords).forEach((lord) => {
-//   rarities.forEach((rarity) => {
-//     generateCard(
-//       lord,
-//       rarity,
-//       CARD_IMAGE_PATH,
-//       '8',
-//       '2',
-//       'Draw 5 cards to give 2 card.',
-//       'Whenever anyone gives a card, you have priority. If you were not the target, draw a card.',
-//       `./tests/out/${lord}-${rarity}.png`
-//     );
-//   });
-// });
-
 Object.entries(cards).forEach(([lord, lordCards]) => {
   lordCards.forEach((card, index) => {
     generateCard(
       lord,
       card.rarity,
       `cardImages/${lord}_${index}.png`,
+      card.name,
       card.cost,
       card.hp,
       card.useText,
