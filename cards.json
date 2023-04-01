@@ -86,7 +86,7 @@
             "cost": 3,
             "hp": 2,
             "useText": "Draw a card to make every player draw a card",
-            "playText": "Whenever you draw a card, charge one. If this has 6, sacrifice this to draw 6."
+            "playText": "Whenever you draw a card, charge 1. Uncharge 6 and sacrifice this to draw 6."
         },
         {
             "name": "Wanta: Dragon of Life",
@@ -104,7 +104,7 @@
             "cost": 6,
             "hp": 3,
             "useText": "Earn 3 coins.",
-            "playText": "Whenever you earn coins, charge one. As an action, uncharge 5 to earn 3 coins."
+            "playText": "Whenever you earn coins, charge 1. As an action, uncharge 5 to earn 3 coins."
         },
         {
             "name": "Traveling Salesman",
@@ -184,15 +184,15 @@
             "cost": 3,
             "hp": 2,
             "useText": "Earn 3 coins to make every player earn 3 coins.",
-            "playText": "Whenever you earn coins, charge one. If this has 6, sacrifice this and earn 18."
+            "playText": "Whenever you earn coins, charge one. Uncharge 6 and sacrifice this to earn 18."
         },
         {
             "name": "Veynu: Dragon of Greed",
             "rarity": "legendary",
             "cost": 16,
             "hp": 6,
-            "useText": "A powerful use effect.",
-            "playText": "A powerful play effect."
+            "useText": "Give any amount of coins to a player to take control of a card they have played of this value.",
+            "playText": "Whenever any player spends gold, you can pay the same amount +2. If you do, you steal whatever effect they did."
         }
     ],
     "ysault": [
@@ -201,96 +201,96 @@
             "rarity": "common",
             "cost": 6,
             "hp": 3,
-            "useText": "",
-            "playText": ""
+            "useText": "Deal 1 damage.",
+            "playText": "After the end of your turn, charge 1. As an action, uncharge 3 to give 1 power."
         },
         {
             "name": "War Horse",
             "rarity": "common",
             "cost": 6,
             "hp": 3,
-            "useText": "",
-            "playText": ""
+            "useText": "Deal 1 damage.",
+            "playText": "Whenever you deal damage from other sources, charge 1. Uncharge 3 to deal 1 damage."
         },
         {
             "name": "Lake of Power",
             "rarity": "common",
             "cost": 6,
             "hp": 3,
-            "useText": "",
-            "playText": ""
+            "useText": "Deal 1 damage.",
+            "playText": "Whenever your cards are dealt damage, charge 1. Uncharge 3 to deal 1 damage."
         },
         {
             "name": "Berserker",
             "rarity": "rare",
-            "cost": 9,
-            "hp": 4,
-            "useText": "",
-            "playText": ""
+            "cost": 7,
+            "hp": 3,
+            "useText": "Deal 1 damage to a card you own to deal 2 damage.",
+            "playText": "As an action, deal 1 damage to this card to deal 1 damage. While this has 1 hp, at the end of the turn deal 1 damage."
         },
         {
             "name": "Elite Archer",
             "rarity": "rare",
             "cost": 9,
             "hp": 4,
-            "useText": "",
-            "playText": ""
+            "useText": "Discard a card to deal 2 damage.",
+            "playText": "At the end of the turn, charge 1. As an action, uncharge 3 to deal 2 damage."
         },
         {
             "name": "War Mage",
             "rarity": "rare",
-            "cost": 7,
+            "cost": 8,
             "hp": 4,
-            "useText": "",
-            "playText": ""
+            "useText": "Give 1 power.",
+            "playText": "Whenever you lose blood drops, give 1 power to another card."
         },
         {
             "name": "Dread Catapult",
             "rarity": "rare",
-            "cost": 8,
+            "cost": 9,
             "hp": 4,
-            "useText": "",
-            "playText": ""
+            "useText": "Choose a player. At the end of the next turn, that player deals 1 damage to a card they own twice.",
+            "playText": "Whenever a card you own is killed, charge 1. As an action, uncharge 1 to trigger its use effect."
         },
         {
             "name": "Hisju: Hired Assassin",
             "rarity": "epic",
             "cost": 12,
             "hp": 5,
-            "useText": "",
-            "playText": ""
+            "useText": "Lose 9 coins to kill any non-legendary card.",
+            "playText": "At the end of the turn, lose 2 coins. If you don't, sacrifice this. If you do, charge 1. As an action, uncharge 4 to kill any card."
         },
         {
             "name": "Edoura: Necromancer",
             "rarity": "epic",
             "cost": 12,
             "hp": 5,
-            "useText": "",
-            "playText": ""
+            "useText": "Resurrect a common card.",
+            "playText": "Whenever a card you own is killed, charge 1. Uncharge 4 to resurrect any card. As an action, sacrifice a card to earn a blood drop."
         },
         {
             "name": "Orsonn: Ysault's General",
             "rarity": "epic",
             "cost": 12,
             "hp": 5,
-            "useText": "",
-            "playText": ""
+            "useText": "Deal 1 damage to a card you own to give 3 power to another card.",
+            "playText": "At the end of the turn, charge 1. Uncharge 3 to give 1 power to every other card you own."
         },
         {
             "name": "Rookie Squire",
             "rarity": "epic",
             "cost": 3,
             "hp": 2,
-            "useText": "",
-            "playText": ""
+            "useText": "Deal 1 damage to make every player deal 1 damage.",
+            "playText": "Whenever you deal damage, charge 1. Uncharge 6 and sacrifice this to give 1 power 6 times."
         },
         {
             "name": "Nethse: Dragon of War",
             "rarity": "legendary",
             "cost": 16,
             "hp": 6,
-            "useText": "",
-            "playText": ""
+            "useText": "Choose a player. That player must give you a blood drop. If they don't, they sacrifice a card and you earn a blood drop.",
+            "playText": "Whenever damage is dealt to one of your cards, charge 1. Uncharge 3 to choose a player and deal 1 damage to every card that player owns. Repeat this effect for every 3 extra power this has."
         }
     ],
     "seraneri": [
@@ -299,24 +299,24 @@
             "rarity": "common",
             "cost": 6,
             "hp": 3,
-            "useText": "",
-            "playText": ""
+            "useText": "See 2.",
+            "playText": "Whenever any player sees, see the same thing."
         },
         {
             "name": "Clairvoyant",
             "rarity": "common",
             "cost": 6,
             "hp": 3,
-            "useText": "",
-            "playText": ""
+            "useText": "See 2.",
+            "playText": "At the end of the turn, see 1."
         },
         {
             "name": "Lake of Knowledge",
             "rarity": "common",
             "cost": 6,
             "hp": 3,
-            "useText": "",
-            "playText": ""
+            "useText": "See 2.",
+            "playText": "Whenever you are seen, see 1."
         },
         {
             "name": "Magic Tinkerer",
