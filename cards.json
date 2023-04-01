@@ -6,15 +6,16 @@
             "cost": 6,
             "hp": 3,
             "useText": "Draw a card.",
-            "playText": "Whenever you draw a card, charge 1. As an action, uncharge 5 to draw a card."
+            "playText": "Whenever you discard a card, charge 1. As an action, uncharge 3 to draw a card."
         },
         {
             "name": "Elven Librarian",
             "rarity": "common",
             "cost": 6,
             "hp": 3,
+            "top": 50,
             "useText": "Draw a card.",
-            "playText": "Whenever you discard a card, charge 1. As an action, uncharge 3 to draw a card."
+            "playText": "Whenever you draw a card, charge 1. As an action, uncharge 5 to draw a card."
         },
         {
             "name": "Lake of Purity",
@@ -61,6 +62,7 @@
             "rarity": "epic",
             "cost": 12,
             "hp": 5,
+            "top": 50,
             "useText": "Deal 2 damage to force the owner to discard a card.",
             "playText": "Whenever you deal 2 or more damage, force the target's owner to discard a card."
         },
@@ -103,6 +105,7 @@
             "rarity": "common",
             "cost": 6,
             "hp": 3,
+            "top": 50,
             "useText": "Earn 3 coins.",
             "playText": "Whenever you earn coins, charge 1. As an action, uncharge 5 to earn 3 coins."
         },
@@ -111,6 +114,7 @@
             "rarity": "common",
             "cost": 6,
             "hp": 3,
+            "top": -50,
             "useText": "Earn 3 coins.",
             "playText": "Whenever you draw a card, you may discard it to earn 3 coins."
         },
@@ -119,6 +123,7 @@
             "rarity": "common",
             "cost": 6,
             "hp": 3,
+            "top": -50,
             "useText": "Earn 3 coins.",
             "playText": "Whenever you lose coins, charge 1. As an action, uncharge 3 to deal 1 damage."
         },
@@ -135,6 +140,7 @@
             "rarity": "rare",
             "cost": 9,
             "hp": 4,
+            "top": 35,
             "useText": "Invest 4 coins.",
             "playText": "Whenever you profit, profit 1 extra for every 3 coins of profit."
         },
@@ -143,6 +149,7 @@
             "rarity": "rare",
             "cost": 7,
             "hp": 4,
+            "top": 25,
             "useText": "Lose 4 coins to deal 1 damage twice.",
             "playText": "As an action, lose 3 coins to deal 1 damage."
         },
@@ -151,6 +158,7 @@
             "rarity": "rare",
             "cost": 8,
             "hp": 4,
+            "top": 50,
             "useText": "Each other player loses 3 coins.",
             "playText": "Whenever you use coins, charge 1. If this has 3, uncharge it to make a player lose 3 coins."
         },
@@ -159,6 +167,7 @@
             "rarity": "epic",
             "cost": 12,
             "hp": 5,
+            "top": -50,
             "useText": "Earn 7 coins.",
             "playText": "At the end of the turn, earn a coin."
         },
@@ -167,6 +176,7 @@
             "rarity": "epic",
             "cost": 12,
             "hp": 5,
+            "top": 35,
             "useText": "Steal 5 coins.",
             "playText": "Whenever a player plays a card, steal 1 from that player."
         },
@@ -175,6 +185,7 @@
             "rarity": "epic",
             "cost": 12,
             "hp": 5,
+            "top": 35,
             "useText": "Sacrifice a card you own to earn 15 coins.",
             "playText": "Whenever a card you own dies, earn 5 coins."
         },
@@ -191,7 +202,7 @@
             "rarity": "legendary",
             "cost": 16,
             "hp": 6,
-            "useText": "Give any amount of coins to a player to take control of a card they have played of this value.",
+            "useText": "Give any amount of coins to a player to take control of a card they own for double the value paid.",
             "playText": "Whenever any player spends gold, you can pay the same amount +2. If you do, you steal whatever effect they did."
         }
     ],
@@ -201,6 +212,7 @@
             "rarity": "common",
             "cost": 6,
             "hp": 3,
+            "top": 40,
             "useText": "Deal 1 damage.",
             "playText": "After the end of your turn, charge 1. As an action, uncharge 3 to give 1 power."
         },
@@ -217,6 +229,7 @@
             "rarity": "common",
             "cost": 6,
             "hp": 3,
+            "top": -70,
             "useText": "Deal 1 damage.",
             "playText": "Whenever your cards are dealt damage, charge 1. Uncharge 3 to deal 1 damage."
         },
@@ -241,6 +254,7 @@
             "rarity": "rare",
             "cost": 8,
             "hp": 4,
+            "top": 50,
             "useText": "Give 1 power.",
             "playText": "Whenever you lose blood drops, give 1 power to another card."
         },
@@ -257,6 +271,7 @@
             "rarity": "epic",
             "cost": 12,
             "hp": 5,
+            "top": 50,
             "useText": "Lose 9 coins to kill any non-legendary card.",
             "playText": "At the end of the turn, lose 2 coins. If you don't, sacrifice this. If you do, charge 1. As an action, uncharge 4 to kill any card."
         },
@@ -273,6 +288,7 @@
             "rarity": "epic",
             "cost": 12,
             "hp": 5,
+            "top": 50,
             "useText": "Deal 1 damage to a card you own to give 3 power to another card.",
             "playText": "At the end of the turn, charge 1. Uncharge 3 to give 1 power to every other card you own."
         },
@@ -281,6 +297,7 @@
             "rarity": "epic",
             "cost": 3,
             "hp": 2,
+            "top": 50,
             "useText": "Deal 1 damage to make every player deal 1 damage.",
             "playText": "Whenever you deal damage, charge 1. Uncharge 6 and sacrifice this to give 1 power 6 times."
         },
@@ -289,7 +306,7 @@
             "rarity": "legendary",
             "cost": 16,
             "hp": 6,
-            "useText": "Choose a player. That player must give you a blood drop. If they don't, they sacrifice a card and you earn a blood drop.",
+            "useText": "Every other player must deal 3 damage to a card they own. If it dies, they give you a blood drop.",
             "playText": "Whenever damage is dealt to one of your cards, charge 1. Uncharge 3 to choose a player and deal 1 damage to every card that player owns. Repeat this effect for every 3 extra power this has."
         }
     ],
@@ -299,6 +316,7 @@
             "rarity": "common",
             "cost": 6,
             "hp": 3,
+            "top": 35,
             "useText": "See 2.",
             "playText": "Whenever any player sees, see the same thing."
         },
@@ -315,6 +333,7 @@
             "rarity": "common",
             "cost": 6,
             "hp": 3,
+            "top": -50,
             "useText": "See 2.",
             "playText": "Whenever you are seen, see 1."
         },
@@ -324,6 +343,7 @@
             "cost": 8,
             "hp": 4,
             "useText": "Discover 1.",
+            "top": 35,
             "playText": "At the end of the turn, you may lose 1 coin to charge 1. Uncharge 3 to discover 1."
         },
         {
@@ -339,6 +359,7 @@
             "rarity": "rare",
             "cost": 7,
             "hp": 3,
+            "top": -60,
             "useText": "Alter the future 3. Then draw a card.",
             "playText": "Whenever the deck is maniputaled, see 3 and charge 1. As an action, uncharge 1 to draw a card."
         },
@@ -387,6 +408,7 @@
             "rarity": "legendary",
             "cost": 16,
             "hp": 6,
+            "top": -60,
             "useText": "See 6. Then, request 3 cards.",
             "playText": "Whenever other player sees, you may see it aswell and charge one. Uncharge 3 to request a card."
         }
@@ -405,6 +427,7 @@
             "rarity": "common",
             "cost": 6,
             "hp": 3,
+            "top": -60,
             "useText": "Play a random effect.",
             "playText": "At the end of the turn, charge 1. If this is killed, play a random effect magnified by half the amount of charges."
         },
@@ -413,6 +436,7 @@
             "rarity": "common",
             "cost": 6,
             "hp": 3,
+            "top": -60,
             "useText": "Play a random effect.",
             "playText": "At the end of the turn, charge 1. Uncharge 3 to play a random effect."
         },
@@ -421,6 +445,7 @@
             "rarity": "rare",
             "cost": 9,
             "hp": 4,
+            "top": -150,
             "useText": "Discard the top card of the deck. Cast it's use effect.",
             "playText": "Draw a random condition. Whenever it is met, charge 1. Uncharge 9 to play the top card of the deck for free."
         },
@@ -429,6 +454,7 @@
             "rarity": "rare",
             "cost": 8,
             "hp": 3,
+            "top": -60,
             "useText": "Create a random secret.",
             "playText": "When this is played, create a side quest. If it is fulfilled, sacrifice this to play a card from your hand for free. Then, play a random effect magnified by 3."
         },
@@ -445,6 +471,7 @@
             "rarity": "rare",
             "cost": 9,
             "hp": 5,
+            "top": -60,
             "useText": "Every other player plays a common card for free. Then, play 5 random effects.",
             "playText": "Whenever a card is played, cast its use effect if possible and deal 1 damage to this."
         },
@@ -453,6 +480,7 @@
             "rarity": "epic",
             "cost": 12,
             "hp": 5,
+            "top": 50,
             "useText": "Discover a random effect magnified by 3. If the target is not you, cast it on every other player.",
             "playText": "Whenever you play a random effect on a player that is not you, play it on every other player."
         },
@@ -469,6 +497,7 @@
             "rarity": "epic",
             "cost": 12,
             "hp": 5,
+            "top": 25,
             "useText": "Discover a new permanent game rule.",
             "playText": "At the end of the turn, charge 1. Uncharge 3 to discover a permanent game rule. Uncharge 6 to discover a new permanent player passive."
         },
@@ -477,16 +506,18 @@
             "rarity": "epic",
             "cost": 3,
             "hp": 2,
+            "top": -100,
             "useText": "Every player plays a random effect.",
-            "playText": "Whenever a random effect is played, charge 1. Uncharge 6 to sacrifice this and get a permanent player passive."
+            "playText": "Whenever a random effect is played, charge 1. Uncharge 6 to sacrifice this and get a random permanent player passive."
         },
         {
             "name": "Hedreada: Dragon of Chaos",
             "rarity": "legendary",
             "cost": 16,
             "hp": 6,
+            "top": -40,
             "useText": "Every player may play a Bumandow card for free. Then, every other player must give all their cards.",
-            "playText": "At the end of the turn, discard the top card. You may trigger its use effect. As an action, you may choose discover a permanent player passive. If you do, give control of this to any other player."
+            "playText": "At the end of the turn, discard the top card. You may trigger its use effect. As an action, you may choose to discover a permanent player passive. If you do, give control of this to any other player."
         }
     ],
     "hesif": [
@@ -495,8 +526,9 @@
             "rarity": "common",
             "cost": 6,
             "hp": 3,
+            "top": -60,
             "useText": "Spend a blood drop to make a player sacrifice a card of their choice.",
-            "playText": ""
+            "playText": "Whenever one of your cards is killed, get a blood drop."
         },
         {
             "name": "Poison Dealer",
@@ -504,15 +536,16 @@
             "cost": 6,
             "hp": 3,
             "useText": "Spend a blood drop to make a player discard 2 cards of their choice.",
-            "playText": ""
+            "playText": "Draw a card for each blood drop spent."
         },
         {
             "name": "Lake of Decay",
             "rarity": "common",
             "cost": 6,
             "hp": 3,
+            "top": -35,
             "useText": "Spend a blood drop to make a player lose 2 blood drops.",
-            "playText": ""
+            "playText": "At the end of the turn, charge 1. Uncharge 3 to earn a blood drop."
         },
         {
             "name": "Undead Horse",
@@ -520,7 +553,7 @@
             "cost": 9,
             "hp": 4,
             "useText": "Spend 2 blood drops to make a player deal 4 damage to a card of their choice, 3 times.",
-            "playText": ""
+            "playText": "Killing cards gives you an extra blood drop."
         },
         {
             "name": "Corrupted Noble",
@@ -528,31 +561,32 @@
             "cost": 9,
             "hp": 4,
             "useText": "Spend 2 blood drops to make a player give you 5 coins and a card.",
-            "playText": ""
+            "playText": "Earn 4 coins for each blood drop spent."
         },
         {
             "name": "Demonic Portal",
             "rarity": "rare",
-            "cost": 7,
+            "cost": 9,
             "hp": 4,
+            "top": -50,
             "useText": "Spend 2 blood drops to return a card of your choice to its owner's hand for each other player.",
-            "playText": ""
+            "playText": "As an action, you may spend 3 blood drops to play a card from your graveyard for free."
         },
         {
             "name": "Possessed Child",
-            "rarity": "epic",
-            "cost": 12,
-            "hp": 5,
-            "useText": "Spend 3 blood drops to take control of the target non-legendary card.",
-            "playText": ""
+            "rarity": "rare",
+            "cost": 9,
+            "hp": 3,
+            "useText": "Spend 2 blood drops to make every other player sacrifice a card of their choice.",
+            "playText": "At the end of the turn, you may spend 1 blood drop to either draw 3 cards or earn 9 coins. If you do not, give control of this to another player."
         },
         {
             "name": "Avicath: Failed Experiment",
             "rarity": "epic",
             "cost": 12,
-            "hp": 5,
-            "useText": "Spend 3 blood drops to make every other player sacrifice a card of their choice.",
-            "playText": ""
+            "hp": 2,
+            "useText": "Spend 3 blood drops to take control of the target non-legendary card.",
+            "playText": "At the end of the turn, give 1 power to this. If this has 6 or more, give it 2 instead. As an action, you may sacrifice this to earn as many blood drops as half its power."
         },
         {
             "name": "Sze: Assassin Shade",
@@ -560,7 +594,7 @@
             "cost": 12,
             "hp": 5,
             "useText": "Spend 4 blood drops to kill 2 cards. Don't get any blood drop for it.",
-            "playText": ""
+            "playText": "At the end of the turn, you may spend a blood drop to charge 1. If you do not, sacrifice this. Uncharge 2 to kill a card."
         },
         {
             "name": "Fronnavou: Cursed King",
@@ -568,7 +602,7 @@
             "cost": 12,
             "hp": 5,
             "useText": "Spend 3 blood drops to sacrifice a card. Then, trigger its use effect 3 times.",
-            "playText": ""
+            "playText": "Whenever you sacrifice a card, you may spend a blood drop to take control of another one of the same rarity."
         },
         {
             "name": "Evil Sapling",
@@ -576,15 +610,15 @@
             "cost": 3,
             "hp": 2,
             "useText": "Every player loses a blood drop, discards a card, sacrifices a card and loses 5 coins.",
-            "playText": ""
+            "playText": "Whenever you spend blood drops, charge 1. Uncharge 6 and sacrifice this to earn 6 blood drops."
         },
         {
             "name": "Porasmes: Dragon of Corruption",
             "rarity": "legendary",
-            "cost": 16,
-            "hp": 6,
+            "cost": 25,
+            "hp": 9,
             "useText": "Spend 5 blood drops to choose any 3 Hesif cards you can see. Show them. Trigger their use effects in any order.",
-            "playText": ""
+            "playText": "At the end of the turn, choose one: earn a blood drop, deal 3 damage, draw 3 cards, give 3 power or earn 9 coins. You may spend a blood drop to magnify by 2."
         }
     ]
 }

@@ -4,6 +4,8 @@ const wordwrap = require('wordwrap');
 const cards = require('./cards.json');
 
 const WORD_WRAP_THRESHOLD = 42;
+const CARD_BODY_LINE_APPROXIMATED_LENGTH = 25;
+const CARD_BODY_LINE_HEIGHT = 6;
 
 const lords = {
   gaidda: {
@@ -126,7 +128,7 @@ function getIconBuffer(lord, type) {
     .toBuffer();
 }
 
-async function generateCard(lord, rarity, cardImagePath, name, costText, hpText, useText, playText, outputPath) {
+async function generateCard(lord, rarity, cardImagePath, name, costText, hpText, useText, playText, cardImageTop, cardImageLeft, outputPath) {
   try {
     const cardFramePath = getCardFramePath(lord, rarity);
     const { width, height } = await sharp(cardFramePath).metadata();
@@ -162,6 +164,8 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
     const playTextImage = getCardTextBuffer(playText, lord);
     const playIconImage = getIconBuffer(lord, 'play');
 
+    let playTextExtraTop = parseInt(useText.length / CARD_BODY_LINE_APPROXIMATED_LENGTH) * CARD_BODY_LINE_HEIGHT;
+
     const [
       frameBuffer,
       imageBuffer,
@@ -191,8 +195,8 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
       .composite([
         { input: imageBuffer,
             gravity: 'northwest',
-            top: overlayTop,
-            left: overlayLeft,
+            top: overlayTop + cardImageTop,
+            left: overlayLeft + cardImageLeft,
             blend: 'dest-over',
         },{ 
             input: costTextBuffer, 
@@ -212,7 +216,7 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
             left: textLeft,
         },{
             input: playTextBuffer,
-            top: textTop + 40,
+            top: textTop + 40 + playTextExtraTop,
             left: textLeft,
         },{
             input: useIconBuffer,
@@ -220,7 +224,7 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
             left: textLeft,
         },{
             input: playIconBuffer,
-            top: textTop + 42,
+            top: textTop + 42 + playTextExtraTop,
             left: textLeft,
         }])
       .toFile(outputPath);
@@ -242,6 +246,8 @@ Object.entries(cards).forEach(([lord, lordCards]) => {
       card.hp,
       card.useText,
       card.playText,
+      card.top || 0,
+      card.left || 0,
       `./tests/out/${lord}_${index}.png`
     );
   });
