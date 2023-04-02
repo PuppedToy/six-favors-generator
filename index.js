@@ -259,9 +259,107 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
   }
 }
 
+function calculateGridDimensions(picturesLength) {
+  const maxPicturesPerRow = 10;
+  const maxPicturesPerColumn = 7;
+
+  let rowCount = 0;
+  let columnCount = 1;
+  let gap = null;
+  let gapThreshold = 0;
+  while (gap !== gapThreshold) {
+    rowCount += 1;
+    if (rowCount > maxPicturesPerRow) {
+      rowCount = 1;
+      columnCount += 1;
+    }
+    if (columnCount > maxPicturesPerColumn) {
+      rowCount = 1;
+      columnCount = 1;
+      gapThreshold += 1;
+    }
+    gap = picturesLength - rowCount * columnCount;
+  }
+
+  return {
+    width: rowCount,
+    height: columnCount,
+    gap,
+  };
+}
+
+async function createPictureGrid(images, outputPath) {
+  const { width, height, gap } = calculateGridDimensions(images.length);
+
+  if (gap > 0) {
+    throw new Error(`Found gap for ${images.length} images: ${gap}`);
+  }
+
+  const CARD_WIDTH = 375;
+  const CARD_HEIGHT = 546;
+
+  const canvasWidth = width * CARD_WIDTH;
+  const canvasHeight = height * CARD_HEIGHT;
+
+  let currentX = 0;
+  let currentY = 0;
+
+  async function loadImage(path, x, y) {
+    const buffer = await sharp(path).toBuffer();
+    return {
+      input: buffer,
+      left: x * CARD_WIDTH,
+      top: y * CARD_HEIGHT,
+    }
+  }
+
+  const compositionPromises = [];
+  for(let i = 0; i < images.length; i++) {
+    compositionPromises.push(loadImage(images[i], currentX, currentY));
+    currentX += 1;
+    if (currentX >= width) {
+      currentX = 0;
+      currentY += 1;
+    }
+  }
+
+  const compositions = await Promise.all(compositionPromises);
+
+  return sharp({
+    create: {
+      width: canvasWidth,
+      height: canvasHeight,
+      channels: 4,
+      background: { r: 255, g: 255, b: 255, alpha: 1 }
+    }
+  }).composite(compositions)
+  .toFile(outputPath);
+}
+
+const grids = {};
+const promises = [];
+
 Object.entries(cards).forEach(([lord, lordCards]) => {
   lordCards.forEach((card, index) => {
-    generateCard(
+    if (!grids[lord]) {
+      grids[lord] = [];
+    }
+
+    if (card.rarity === 'common') {
+      grids[lord].push(`./tests/out/${lord}_${index}.png`);
+      grids[lord].push(`./tests/out/${lord}_${index}.png`);
+      grids[lord].push(`./tests/out/${lord}_${index}.png`);
+      grids[lord].push(`./tests/out/${lord}_${index}.png`);
+    }
+    else if (card.rarity === 'rare') {
+      grids[lord].push(`./tests/out/${lord}_${index}.png`);
+      grids[lord].push(`./tests/out/${lord}_${index}.png`);
+    }
+    else {
+      grids[lord].push(`./tests/out/${lord}_${index}.png`);
+    }
+
+    promises.push(generateCard(
       lord,
       card.rarity,
       `cardImages/${lord}_${index}.png`,
@@ -274,6 +372,14 @@ Object.entries(cards).forEach(([lord, lordCards]) => {
       card.top || 0,
       card.left || 0,
       `./tests/out/${lord}_${index}.png`
-    );
+    ));
   });
 });
+
+Promise.all(promises)
+  .then(() => {
+    Object.entries(grids).forEach(([lord, paths]) => {
+      createPictureGrid(paths, `./tests/grids/${lord}_grid.png`);
+    });
+  }
+);
