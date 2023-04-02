@@ -1,7 +1,7 @@
 const sharp = require('sharp');
 const wordwrap = require('wordwrap');
 
-const cards = require('./cards.json');
+const { playDeck } = require('./cards.json');
 
 const WORD_WRAP_THRESHOLD = 42;
 const CARD_BODY_LINE_APPROXIMATED_LENGTH = 25;
@@ -337,9 +337,9 @@ async function createPictureGrid(images, outputPath) {
 }
 
 const grids = {};
-const promises = [];
+const playDeckPromises = [];
 
-Object.entries(cards).forEach(([lord, lordCards]) => {
+Object.entries(playDeck).forEach(([lord, lordCards]) => {
   lordCards.forEach((card, index) => {
     if (!grids[lord]) {
       grids[lord] = [];
@@ -359,7 +359,7 @@ Object.entries(cards).forEach(([lord, lordCards]) => {
       grids[lord].push(`./tests/out/${lord}_${index}.png`);
     }
 
-    promises.push(generateCard(
+    playDeckPromises.push(generateCard(
       lord,
       card.rarity,
       `cardImages/${lord}_${index}.png`,
@@ -376,7 +376,7 @@ Object.entries(cards).forEach(([lord, lordCards]) => {
   });
 });
 
-Promise.all(promises)
+Promise.all(playDeckPromises)
   .then(() => {
     Object.entries(grids).forEach(([lord, paths]) => {
       createPictureGrid(paths, `./tests/grids/${lord}_grid.png`);
