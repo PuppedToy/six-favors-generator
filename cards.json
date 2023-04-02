@@ -462,7 +462,7 @@
                 "playText": "Whenever other player sees, you may see it aswell and charge one. Uncharge 3 to request a card."
             }
         ],
-        "boumandow": [
+        "bumandow": [
             {
                 "name": "Convenient NPC",
                 "rarity": "common",
@@ -479,7 +479,7 @@
                 "hp": 3,
                 "top": -60,
                 "useText": "Play a random effect.",
-                "flavourText": "It's not poisoned. I swear. Boumandow chose the ingredients.",
+                "flavourText": "It's not poisoned. I swear. Bumandow chose the ingredients.",
                 "playText": "At the end of the turn, charge 1. If this is killed, play a random effect magnified by half the amount of charges."
             },
             {
@@ -557,7 +557,7 @@
                 "hp": 5,
                 "top": 25,
                 "useText": "Discover a new permanent game rule.",
-                "flavourText": "Imagine how hard it is to become the prophet of someone like Boumandow.",
+                "flavourText": "Imagine how hard it is to become the prophet of someone like Bumandow.",
                 "playText": "At the end of the turn, charge 1. Uncharge 3 to discover a permanent game rule. Uncharge 6 to discover a new permanent player passive."
             },
             {
@@ -567,7 +567,7 @@
                 "hp": 2,
                 "top": -100,
                 "useText": "Every player plays a random effect.",
-                "flavourText": "Boumandow packaged it himself. Just for you.",
+                "flavourText": "Bumandow packaged it himself. Just for you.",
                 "playText": "Whenever a random effect is played, charge 1. Uncharge 6 to sacrifice this and get a random permanent player passive."
             },
             {
@@ -577,7 +577,7 @@
                 "hp": 6,
                 "top": -40,
                 "useText": "Every player may play a Bumandow card for free. Then, every other player must give all their cards.",
-                "flavourText": "Hedreada and Boumandow met each other in the court, but none of them even knew what it was about.",
+                "flavourText": "Hedreada and Bumandow met each other in the court, but none of them even knew what it was about.",
                 "playText": "At the end of the turn, discard the top card. You may trigger its use effect. As an action, you may choose to discover a permanent player passive. If you do, give control of this to any other player."
             }
         ],
@@ -720,7 +720,7 @@
             "Discard 6 epic cads.",
             "Discard 5 rare cards from the same lord."
         ],
-        "boumandow": [
+        "bumandow": [
             "Draw 3 requests from other lords and halve their numbers. I want ALL of them at the same time."
         ],
         "hesif": [
@@ -759,7 +759,7 @@
             "The deck is manipulated",
             "Turns are altered"
         ],
-        "boumandow": [
+        "bumandow": [
             "An effect card is drawn o discovered",
             "The top card of the deck is discarded",
             "A condition card is drawn or discovered",
@@ -823,7 +823,7 @@
             "Discard a card or lose 3 coins to find a rare card",
             "Discard a card or lose 3 coins to have another turn"
         ],
-        "boumandow": [
+        "bumandow": [
             "Draw a random effect and every player triggers it",
             "Discover a random effect and every player triggers it",
             "Each player draws a random effect and triggers it",

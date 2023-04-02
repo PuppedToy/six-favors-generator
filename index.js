@@ -27,7 +27,7 @@ const lords = {
     costColor: '#D9F8FB',
     textColor: '#252A5A',
   },
-  boumandow: {
+  bumandow: {
     costColor: 'white',
     textColor: '#55255A',
   },
