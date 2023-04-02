@@ -173,7 +173,6 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
     const costTextTop = 2 + extraCostTop;
     const costTextLeft = width - 41 + extraCostLeft;
     const flavourTextExtraTop = parseInt(flavourText.length / CARD_FLAVOUR_LINE_APPROXIMATED_LENGTH) * parseInt(CARD_BODY_LINE_HEIGHT * -1);
-    console.log(name, flavourTextExtraTop);
     const flavourTextTop = 440 + flavourTextExtraTop;
     const flavourTextLeft = 140;
 
