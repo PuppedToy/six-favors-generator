@@ -5,6 +5,7 @@ const cards = require('./cards.json');
 
 const WORD_WRAP_THRESHOLD = 42;
 const CARD_BODY_LINE_APPROXIMATED_LENGTH = 25;
+const CARD_FLAVOUR_LINE_APPROXIMATED_LENGTH = 18;
 const CARD_BODY_LINE_HEIGHT = 6;
 
 const lords = {
@@ -94,8 +95,20 @@ function getCardTextBuffer(text, lord) {
   });
 }
 
-function getTextBuffer(text, color, {textWidth, textHeight, fontSize, fontFamily, fontWeight}) {
-    const wrap = wordwrap(WORD_WRAP_THRESHOLD, {cut: true});
+function getFlavourTextBuffer(text, lord) {
+  return getTextBuffer(text, lords[lord].textColor, {
+    textHeight: 50,
+    textWidth: 68,
+    fontSize: 4,
+    fontFamily: 'Arial',
+    fontStyle: 'italic',
+    fontWeight: 'default',
+    customThreshold: 26,
+  });
+}
+
+function getTextBuffer(text, color, {textWidth, textHeight, fontSize, fontFamily, fontWeight, customThreshold, fontStyle}) {
+    const wrap = wordwrap(customThreshold || WORD_WRAP_THRESHOLD, {cut: true});
 
     // Break the text into multiple lines
     const wrappedText = wrap(text);
@@ -108,6 +121,7 @@ function getTextBuffer(text, color, {textWidth, textHeight, fontSize, fontFamily
           white-space: pre;
           font-size: ${fontSize}px;
           font-weight: ${fontWeight || 'bold'};
+          font-style: ${fontStyle || 'none'};
           fill: ${color};
         }
       </style>
@@ -128,7 +142,7 @@ function getIconBuffer(lord, type) {
     .toBuffer();
 }
 
-async function generateCard(lord, rarity, cardImagePath, name, costText, hpText, useText, playText, cardImageTop, cardImageLeft, outputPath) {
+async function generateCard(lord, rarity, cardImagePath, name, costText, hpText, useText, playText, flavourText, cardImageTop, cardImageLeft, outputPath) {
   try {
     const cardFramePath = getCardFramePath(lord, rarity);
     const { width, height } = await sharp(cardFramePath).metadata();
@@ -158,11 +172,16 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
     const nameTextTop = 30 + extraNameTop;
     const costTextTop = 2 + extraCostTop;
     const costTextLeft = width - 41 + extraCostLeft;
+    const flavourTextExtraTop = parseInt(flavourText.length / CARD_FLAVOUR_LINE_APPROXIMATED_LENGTH) * parseInt(CARD_BODY_LINE_HEIGHT * -1);
+    console.log(name, flavourTextExtraTop);
+    const flavourTextTop = 440 + flavourTextExtraTop;
+    const flavourTextLeft = 140;
 
     const useTextImage = getCardTextBuffer(useText, lord);
     const useIconImage = getIconBuffer(lord, 'use');
     const playTextImage = getCardTextBuffer(playText, lord);
     const playIconImage = getIconBuffer(lord, 'play');
+    const flavourTextImage = getFlavourTextBuffer(flavourText, lord);
 
     let playTextExtraTop = parseInt(useText.length / CARD_BODY_LINE_APPROXIMATED_LENGTH) * CARD_BODY_LINE_HEIGHT;
 
@@ -176,6 +195,7 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
       playIconBuffer,
       hpTextBuffer,
       nameTextBuffer,
+      flavourTextBuffer,
     ] = await Promise.all([
       frameResizer,
       imageResizer,
@@ -186,6 +206,7 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
       playIconImage,
       hpTextImage,
       nameTextImage,
+      flavourTextImage,
     ]);
     const textTop = 260;
     const textLeft = 30;
@@ -219,6 +240,10 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
             top: textTop + 40 + playTextExtraTop,
             left: textLeft,
         },{
+            input: flavourTextBuffer,
+            top: flavourTextTop,
+            left: flavourTextLeft,
+        },{
             input: useIconBuffer,
             top: textTop + 2,
             left: textLeft,
@@ -246,6 +271,7 @@ Object.entries(cards).forEach(([lord, lordCards]) => {
       card.hp,
       card.useText,
       card.playText,
+      card.flavourText,
       card.top || 0,
       card.left || 0,
       `./tests/out/${lord}_${index}.png`
