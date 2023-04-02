@@ -1,7 +1,7 @@
 const sharp = require('sharp');
 const wordwrap = require('wordwrap');
 
-const { playDeck } = require('./cards.json');
+const { playDeck, requestDeck, conditionDeck, effectDeck } = require('./cards.json');
 
 const WORD_WRAP_THRESHOLD = 42;
 const CARD_BODY_LINE_APPROXIMATED_LENGTH = 25;
@@ -12,10 +12,12 @@ const lords = {
   gaidda: {
     costColor: '#B1CAB1',
     textColor: '#2A5A25',
+    top: 45,
   },
   noumi: {
     costColor: '#FBF8D9',
     textColor: '#5A5925',
+    top: 45,
   },
   ysault: {
     costColor: '#FBD9D9',
@@ -86,8 +88,8 @@ function getNameBuffer(text, lord) {
   }), top };
 }
 
-function getCardTextBuffer(text, lord) {
-  return getTextBuffer(`     ${text}`, lords[lord].textColor, {
+function getCardTextBuffer(text, lord, iconSkip = '     ') {
+  return getTextBuffer(`${iconSkip}${text}`, lords[lord].textColor, {
     textHeight: 50,
     textWidth: 78,
     fontSize: 4,
@@ -259,6 +261,71 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
   }
 }
 
+async function generateLordCard(lord, rarity, cardImagePath, name, text, outputPath) {
+  try {
+    const cardFramePath = getCardFramePath(lord, rarity);
+    const { width, height } = await sharp(cardFramePath).metadata();
+    
+    // Calculate position and size of the overlay
+    const overlayTop = Math.round(height * 0.05);
+    const overlayWidth = Math.round(width * 0.95);
+    const overlayHeight = Math.round(overlayWidth * (512 / 512));
+    const overlayLeft = Math.round((width - overlayWidth) / 2);
+
+    // Load and resize the CardFrame
+    const frameResizer = sharp(cardFramePath)
+      .resize(width, height)
+      .toBuffer();
+
+    // Load and resize the CardImage
+    const imageResizer = sharp(cardImagePath)
+      .resize(overlayWidth, overlayHeight)
+      .toBuffer();
+
+    const nameTextLeft = 25;
+    const { text: nameTextImage, top: extraNameTop } = getNameBuffer(name, lord);
+    const nameTextTop = 30 + extraNameTop;
+    const textImage = getCardTextBuffer(text, lord, '');
+
+    const [
+      frameBuffer,
+      imageBuffer,
+      textBuffer,
+      nameTextBuffer,
+    ] = await Promise.all([
+      frameResizer,
+      imageResizer,
+      textImage,
+      nameTextImage,
+    ]);
+    const textTop = 260;
+    const textLeft = 30;
+
+    // Composite the CardImage with the CardFrame
+    await sharp(frameBuffer)
+      .composite([
+        { input: imageBuffer,
+            gravity: 'northwest',
+            top: overlayTop + (lords[lord].top || 0),
+            left: overlayLeft,
+            blend: 'dest-over',
+        },{
+          input: nameTextBuffer, 
+          top: nameTextTop, 
+          left: nameTextLeft, 
+        },{
+            input: textBuffer,
+            top: textTop,
+            left: textLeft,
+        }])
+      .toFile(outputPath);
+      
+    console.log(`Image saved to ${outputPath}`);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 function calculateGridDimensions(picturesLength) {
   const maxPicturesPerRow = 10;
   const maxPicturesPerColumn = 7;
@@ -338,6 +405,13 @@ async function createPictureGrid(images, outputPath) {
 
 const grids = {};
 const playDeckPromises = [];
+const requestDeckPromises = [];
+const conditionDeckPromises = [];
+const effectDeckPromises = [];
+
+const REQUEST_RARITY = 'epic';
+const CONDITION_RARITY = 'rare';
+const EFFECT_RARITY = 'common';
 
 Object.entries(playDeck).forEach(([lord, lordCards]) => {
   lordCards.forEach((card, index) => {
@@ -376,10 +450,85 @@ Object.entries(playDeck).forEach(([lord, lordCards]) => {
   });
 });
 
+Object.entries(requestDeck).forEach(([lord, requests]) => {
+  requests.forEach((request, index) => {
+    requestDeckPromises.push(generateLordCard(
+      lord,
+      REQUEST_RARITY,
+      `lords/${lord}.png`,
+      'Request',
+      request,
+      `./tests/out/request_${lord}_${index}.png`
+    ));
+  });
+});
+
+Object.entries(conditionDeck).forEach(([lord, conditions]) => {
+  conditions.forEach((condition, index) => {
+    conditionDeckPromises.push(generateLordCard(
+      lord,
+      CONDITION_RARITY,
+      `lords/${lord}.png`,
+      'Condition',
+      condition,
+      `./tests/out/condition_${lord}_${index}.png`
+    ));
+  });
+});
+
+Object.entries(effectDeck).forEach(([lord, effects]) => {
+  effects.forEach((effect, index) => {
+    effectDeckPromises.push(generateLordCard(
+      lord,
+      EFFECT_RARITY,
+      `lords/${lord}.png`,
+      'Effect',
+      effect,
+      `./tests/out/effect_${lord}_${index}.png`
+    ));
+  });
+});
+
 Promise.all(playDeckPromises)
   .then(() => {
     Object.entries(grids).forEach(([lord, paths]) => {
       createPictureGrid(paths, `./tests/grids/${lord}_grid.png`);
     });
+  }
+);
+
+Promise.all(requestDeckPromises)
+  .then(() => {
+    const allRequests = [];
+    Object.entries(requestDeck).forEach(([lord, requests]) => {
+      requests.forEach((_, index) => {
+        allRequests.push(`./tests/out/request_${lord}_${index}.png`);
+      });
+    });
+    createPictureGrid(allRequests, `./tests/grids/requests_grid.png`);
+  }
+);
+
+Promise.all(conditionDeckPromises)
+  .then(() => {
+    const allConditions = [];
+    Object.entries(conditionDeck).forEach(([lord, conditions]) => {
+      conditions.forEach((_, index) => {
+        allConditions.push(`./tests/out/condition_${lord}_${index}.png`);
+      });
+    });
+    createPictureGrid(allConditions, `./tests/grids/conditions_grid.png`);
+  }
+);
+
+Promise.all(effectDeckPromises)
+  .then(() => {
+    const allEffects = [];
+    Object.entries(effectDeck).forEach(([lord, effects]) => {
+      effects.forEach((_, index) => {
+        allEffects.push(`./tests/out/effect_${lord}_${index}.png`);
+      });
+    });
+    createPictureGrid(allEffects, `./tests/grids/effects_grid.png`);
   }
 );
