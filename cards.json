@@ -8,7 +8,7 @@
                 "hp": 3,
                 "useText": "Draw a card.",
                 "flavourText": "It's not a bad omen, it's just a cat.",
-                "playText": "Whenever you discard a card, charge 1. As an action, uncharge 3 to draw a card."
+                "playText": "Whenever a card is discarded, charge 1. As an action, uncharge 3 to draw a card."
             },
             {
                 "name": "Elven Librarian",
@@ -18,7 +18,7 @@
                 "top": 50,
                 "useText": "Draw a card.",
                 "flavourText": "The library is open to all, but only the wise can find what they seek.",
-                "playText": "Whenever you draw a card, charge 1. As an action, uncharge 5 to draw a card."
+                "playText": "Whenever a card is drawn, charge 1. As an action, uncharge 3 to draw a card."
             },
             {
                 "name": "Lake of Purity",
@@ -27,7 +27,7 @@
                 "hp": 3,
                 "useText": "Draw a card.",
                 "flavourText": "The lake is a place of peace and tranquility.",
-                "playText": "Whenever you draw a card, earn a coin."
+                "playText": "Whenever a card is drawn, earn a coin."
             },
             {
                 "name": "Greedy Vulture",
@@ -36,25 +36,25 @@
                 "hp": 4,
                 "useText": "Trade a card to earn 3 coins.",
                 "flavourText": "It's not stealing if you don't get caught.",
-                "playText": "As an action, give a card to earn 4 coins."
+                "playText": "As an action, give a card to earn 5 coins."
             },
             {
                 "name": "Lonely Wolf",
                 "rarity": "rare",
                 "cost": 7,
                 "hp": 4,
-                "useText": "Give a card to earn 5 coins.",
+                "useText": "Give a card to earn 6 coins.",
                 "flavourText": "It used to be a pack wolf, but it got kicked out for being too greedy.",
-                "playText": "Whenever a card is given to other player, earn a coin."
+                "playText": "Whenever a card is given, earn a coin."
             },
             {
                 "name": "Elven Hunter",
                 "rarity": "rare",
                 "cost": 9,
                 "hp": 4,
-                "useText": "Discard a card to deal 2 damage.",
+                "useText": "Discard a card to deal 3 damage.",
                 "flavourText": "The hunter is a master of the bow, and a master of the forest.",
-                "playText": "Whenever you discard a card, deal 1 damage."
+                "playText": "Whenever a card is discarded, deal 1 damage."
             },
             {
                 "name": "Poisonous Spider",
@@ -73,7 +73,7 @@
                 "top": 50,
                 "useText": "Deal 2 damage to force the owner to discard a card.",
                 "flavourText": "Omont rules the forest with an iron paw.",
-                "playText": "Whenever you deal 2 or more damage, force the target's owner to discard a card."
+                "playText": "Whenever 2 or more damage are dealt, you can force the target's owner to discard a card."
             },
             {
                 "name": "Haund: Ancient Tree",
@@ -91,7 +91,7 @@
                 "hp": 5,
                 "useText": "Draw 5 cards to give 2 cards.",
                 "flavourText": "Sokel is generous, but only to those who are worthy.",
-                "playText": "Whenever anyone gives a card, you have priority. If you weren't the target, draw a card."
+                "playText": "Whenever another player gives a card, you have priority to receive it."
             },
             {
                 "name": "Baby Sapling",
@@ -109,7 +109,7 @@
                 "hp": 6,
                 "useText": "Draw a card from any graveyard 3 times.",
                 "flavourText": "Wanta is deeply connected to everything in the forest. Even the dead.",
-                "playText": "Whenever a player obtains a card from any source, you may discard a card to force that player to give you that card."
+                "playText": "Before you draw, you can choose to draw from any graveyard or the discard pile instead. As an action, deal 1 damage to a card you own to draw a card."
             }
         ],
         "noumi": [
@@ -121,7 +121,7 @@
                 "top": 50,
                 "useText": "Earn 3 coins.",
                 "flavourText": "The bank always wins.",
-                "playText": "Whenever you earn coins, charge 1. As an action, uncharge 5 to earn 3 coins."
+                "playText": "Whenever coins are earned, charge 1. As an action, uncharge 3 to invest 3 coins."
             },
             {
                 "name": "Traveling Salesman",
@@ -131,7 +131,7 @@
                 "top": -50,
                 "useText": "Earn 3 coins.",
                 "flavourText": "See the salesman's wares. They have gummy bears!",
-                "playText": "Whenever you draw a card, you may discard it to earn 3 coins."
+                "playText": "Whenever you draw a card, you may discard it to earn 4 coins."
             },
             {
                 "name": "Lake of Riches",
@@ -141,7 +141,7 @@
                 "top": -50,
                 "useText": "Earn 3 coins.",
                 "flavourText": "The richer, the deadlier. Or so the saying goes.",
-                "playText": "Whenever you lose coins, charge 1. As an action, uncharge 3 to deal 1 damage."
+                "playText": "Whenever coins are lost to the bank, charge 1. As an action, uncharge 3 to deal 1 damage."
             },
             {
                 "name": "Humble Noble",
@@ -150,7 +150,7 @@
                 "hp": 4,
                 "useText": "Steal 4 coins.",
                 "flavourText": "The noble is humble, but the noble is also rich.",
-                "playText": "Whenever you lose coins, charge 1. If this has 3 counters, uncharge it to steal a coin."
+                "playText": "Whenever coins are lost to the bank, charge 1. Uncharge 3 to steal 2 coins."
             },
             {
                 "name": "Greedy Wizard",
@@ -180,7 +180,7 @@
                 "top": 50,
                 "useText": "Each other player loses 3 coins.",
                 "flavourText": "The shinier armor to hide the ugliest face.",
-                "playText": "Whenever you use coins, charge 1. If this has 3, uncharge it to make a player lose 3 coins."
+                "playText": "Whenever coins are lost to the bank, charge 1. Uncharge 3 to make a player lose 3 coins."
             },
             {
                 "name": "Royal Mint",
@@ -200,7 +200,7 @@
                 "top": 35,
                 "useText": "Steal 5 coins.",
                 "flavourText": "Edenwr is known for always finding a way to get what he wants.",
-                "playText": "Whenever a player plays a card, steal 1 from that player."
+                "playText": "Whenever another player plays a card, steal 1 from that player."
             },
             {
                 "name": "Anangith: High Inquisitor",
@@ -210,7 +210,7 @@
                 "top": 35,
                 "useText": "Sacrifice a card you own to earn 15 coins.",
                 "flavourText": "She is just praying for your soul. Which happens to be in your wallet.",
-                "playText": "Whenever a card you own dies, earn 5 coins."
+                "playText": "Whenever a card you do not own card dies, earn 3 coins. If it was a sacrifice, earn 6 instead."
             },
             {
                 "name": "Beggar",
@@ -226,9 +226,9 @@
                 "rarity": "legendary",
                 "cost": 16,
                 "hp": 6,
-                "useText": "Give any amount of coins to a player to take control of a card they own for double the value paid.",
+                "useText": "Give any amount of coins to a player to take control of a card they own worth double the value paid.",
                 "flavourText": "Veynu was very good at math when she was a kid.",
-                "playText": "Whenever any player spends gold, you can pay the same amount +2. If you do, you steal whatever effect they did."
+                "playText": "Whenever any player spends coins, you can pay the same amount. If you do, you steal whatever they bought. As an action, give a card to steal 3 coins to that player."
             }
         ],
         "ysault": [
@@ -240,7 +240,7 @@
                 "top": 40,
                 "useText": "Deal 1 damage.",
                 "flavourText": "I swear I heard him humming while he was working.",
-                "playText": "After the end of your turn, charge 1. As an action, uncharge 3 to give 1 power."
+                "playText": "At the end of the turn, charge 1. As an action, uncharge 3 to give 1 power."
             },
             {
                 "name": "War Horse",
@@ -249,7 +249,7 @@
                 "hp": 3,
                 "useText": "Deal 1 damage.",
                 "flavourText": "Riding a horse is a lot more fun than walking.",
-                "playText": "Whenever you deal damage from other sources, charge 1. Uncharge 3 to deal 1 damage."
+                "playText": "Whenever damage is dealt from other sources, charge 1. Uncharge 3 to deal 1 damage."
             },
             {
                 "name": "Lake of Power",
@@ -259,7 +259,7 @@
                 "top": -70,
                 "useText": "Deal 1 damage.",
                 "flavourText": "The lake is a source of power, but it's also a source of... Water?",
-                "playText": "Whenever your cards are dealt damage, charge 1. Uncharge 3 to deal 1 damage."
+                "playText": "Whenever damage is dealt, charge 1. Uncharge 3 to give 1 power."
             },
             {
                 "name": "Berserker",
@@ -287,7 +287,7 @@
                 "top": 50,
                 "useText": "Give 1 power.",
                 "flavourText": "Her favourite trick is turning cats into panthers.",
-                "playText": "Whenever you lose blood drops, give 1 power to another card."
+                "playText": "Whenever cards are seen or the deck is manipulated, charge 1. Uncharge 2 to give 1 power to another card."
             },
             {
                 "name": "Dread Catapult",
@@ -296,7 +296,7 @@
                 "hp": 4,
                 "useText": "Choose a player. At the end of the next turn, that player deals 1 damage to a card they own twice.",
                 "flavourText": "It makes it rain death.",
-                "playText": "Whenever a card you own is killed, charge 1. As an action, uncharge 1 to trigger its use effect."
+                "playText": "Whenever a card you own is killed, charge 1. As an action, uncharge 1 to trigger this card's use effect."
             },
             {
                 "name": "Hisju: Hired Assassin",
@@ -304,9 +304,9 @@
                 "cost": 12,
                 "hp": 5,
                 "top": 50,
-                "useText": "Lose 9 coins to kill any non-legendary card.",
+                "useText": "Lose 7 coins to kill any non-legendary card.",
                 "flavourText": "Hisju never talks. Hisju never smiles. But Hisju never misses his target.",
-                "playText": "At the end of the turn, lose 2 coins. If you don't, sacrifice this. If you do, charge 1. As an action, uncharge 4 to kill any card."
+                "playText": "At the end of the turn, lose 1 coin. If you don't, sacrifice this. If you do, charge 1. As an action, uncharge 4 to kill any card."
             },
             {
                 "name": "Edoura: Necromancer",
@@ -315,7 +315,7 @@
                 "hp": 5,
                 "useText": "Resurrect a common card.",
                 "flavourText": "She is actually very friends of Plarath. They studied together.",
-                "playText": "Whenever a card you own is killed, charge 1. Uncharge 4 to resurrect any card. As an action, sacrifice a card to earn a blood drop."
+                "playText": "Whenever a card is killed, charge 1. Uncharge 4 to resurrect any card. As an action, sacrifice a card to earn a blood drop."
             },
             {
                 "name": "Orsonn: Ysault's General",
@@ -325,7 +325,7 @@
                 "top": 50,
                 "useText": "Deal 1 damage to a card you own to give 3 power to another card.",
                 "flavourText": "The whip is the best tool to keep your troops motivated.",
-                "playText": "At the end of the turn, charge 1. Uncharge 3 to give 1 power to every other card you own."
+                "playText": "At the end of the turn, charge 1. Uncharge 3 to give 1 power to every card you own."
             },
             {
                 "name": "Rookie Squire",
@@ -342,9 +342,9 @@
                 "rarity": "legendary",
                 "cost": 16,
                 "hp": 6,
-                "useText": "Every other player must deal 3 damage to a card they own. If it dies, they give you a blood drop.",
+                "useText": "Every other player must deal 3 damage to a card they own.",
                 "flavourText": "Nethse feed from her enemies fear. She also enjoys mashed potatoes.",
-                "playText": "Whenever damage is dealt to one of your cards, charge 1. Uncharge 3 to choose a player and deal 1 damage to every card that player owns. Repeat this effect for every 3 extra power this has."
+                "playText": "Whenever damage is dealt to one of your cards, make every other player deal X damage to a card they own. X is the extra power of this. As an action, sacrifice a card to give 3 power to this."
             }
         ],
         "seraneri": [
@@ -356,7 +356,7 @@
                 "top": 35,
                 "useText": "See 2.",
                 "flavourText": "Your eyes and your ears",
-                "playText": "Whenever any player sees, see the same thing."
+                "playText": "Whenever cards are seen, earn a coin."
             },
             {
                 "name": "Clairvoyant",
@@ -375,36 +375,36 @@
                 "top": -50,
                 "useText": "See 2.",
                 "flavourText": "You may see the future in your own reflection.",
-                "playText": "Whenever you are seen, see 1."
+                "playText": "Whenever cards are seen, charge one. Uncharge 3 to draw a card."
             },
             {
                 "name": "Magic Tinkerer",
                 "rarity": "rare",
-                "cost": 8,
+                "cost": 9,
                 "hp": 4,
                 "useText": "Discover 1.",
                 "top": 35,
                 "flavourText": "She is happy with her job. She gets to play with magic all day.",
-                "playText": "At the end of the turn, you may lose 1 coin to charge 1. Uncharge 3 to discover 1."
+                "playText": "Whenever coins are lost to the bank, charge 1. Uncharge 3 to discover 1."
             },
             {
                 "name": "Old Wizard",
                 "rarity": "rare",
-                "cost": 7,
+                "cost": 8,
                 "hp": 3,
                 "useText": "Request a card. If you get it, give a coin to the former owner.",
                 "flavourText": "I need to retire. I'm too old for this.",
-                "playText": "Whenever you see, charge 1. Uncharge 5 to request a card."
+                "playText": "Whenever cards are seen, charge 1. Uncharge 3 to request a card."
             },
             {
                 "name": "Plarath's Apprentice",
                 "rarity": "rare",
-                "cost": 7,
+                "cost": 8,
                 "hp": 3,
                 "top": -60,
                 "useText": "Alter the future 3. Then draw a card.",
                 "flavourText": "Plarath still doesn't know he has an apprentice.",
-                "playText": "Whenever the deck is maniputaled, see 3 and charge 1. As an action, uncharge 1 to draw a card."
+                "playText": "Whenever the deck is maniputaled, see the first 3 cards from the deck and charge 1. As an action, uncharge 1 to draw a card."
             },
             {
                 "name": "Magic Swordsman",
@@ -413,7 +413,7 @@
                 "hp": 4,
                 "useText": "Deal 1 damage. If this kills, request a card from the owner.",
                 "flavourText": "Normal swords are dull and dirty. Magic cuts cleaner.",
-                "playText": "Whenever you see, charge 1. Uncharge 3 to deal 1 damage."
+                "playText": "Whenever cards are seen, charge 1. Uncharge 3 to deal 1 damage."
             },
             {
                 "name": "Ghenbe: The Dragon Summoner",
@@ -429,9 +429,9 @@
                 "rarity": "epic",
                 "cost": 12,
                 "hp": 5,
-                "useText": "See 6. Then choose one: your next turn you have an extra action or make an opponent lose an action.",
+                "useText": "See 6. Request 1. Then choose one: your next turn you have an extra action or make an opponent lose an action.",
                 "flavourText": "Her elbow itches whenever she weaves time.",
-                "playText": "At the end of the turn, charge 1. Uncharge 5 to have an extra action this turn. As an action, you may uncharge 3 to make an opponent lose their next turn."
+                "playText": "Whenever cards are seen, next turn you have 2 actions."
             },
             {
                 "name": "Plarath: Grand Archmage",
@@ -459,7 +459,7 @@
                 "top": -60,
                 "useText": "See 6. Then, request 3 cards.",
                 "flavourText": "He can see through walls. Just saying.",
-                "playText": "Whenever other player sees, you may see it aswell and charge one. Uncharge 3 to request a card."
+                "playText": "At the end of the turn, alter the future 3. Before you draw, you can say the name of the card. If you guess it correctly, request a card."
             }
         ],
         "bumandow": [
@@ -700,48 +700,48 @@
             "Discard 12 cards.",
             "Distribute 10 cards among other players.",
             "Make someone have at least 10 cards less than you. Give them 6 cards.",
-            "Make everyone have at least 7 cards less than you. Distribute 7 cards as evenly as possible."
+            "Make everyone have at least 6 cards less than you. Distribute 6 cards as evenly as possible."
         ],
         "noumi": [
-            "Pay 36 coins.",
-            "Distribute 30 coins among other players.",
-            "Make someone have at least 30 coins less than you. Give them 20 coins.",
-            "Make everyone have at least 21 coins less than you. Distribute 21 coins as evenly as possible."
+            "Pay 30 coins.",
+            "Distribute 24 coins among other players.",
+            "Make someone have at least 24 coins less than you. Give them 15 coins.",
+            "Make everyone have at least 15 coins less than you. Distribute 15 coins as evenly as possible."
         ],
         "ysault": [
-            "Sacrifice cards worth 18 power or more.",
-            "Distribute cards worth 15 power or more among other players.",
-            "Make someone have at least 15 power less than you. Give them cards worth 10 power.",
-            "Make everyone have at least 10 power less than you. Distribute cards worth 10 power as evenly as possible."
+            "Sacrifice cards worth 12 power or more.",
+            "Distribute cards worth 9 power or more among other players.",
+            "Make someone have at least 9 power less than you. Give them cards worth 6 power.",
+            "Make everyone have at least 6 power less than you. Distribute cards worth 6 power as evenly as possible."
         ],
         "seraneri": [
-            "Discard 10 cards from the same lord.",
-            "Discard 10 rare cards.",
-            "Discard 6 epic cads.",
-            "Discard 5 rare cards from the same lord."
+            "Discard 8 cards from the same lord.",
+            "Discard 8 rare cards.",
+            "Discard 4 epic cads.",
+            "Discard 4 rare cards from the same lord."
         ],
         "bumandow": [
             "Draw 3 requests from other lords and halve their numbers. I want ALL of them at the same time."
         ],
         "hesif": [
            "Pay 15 blood drops.",
-           "Discard 24 cards from your graveyard.",
-           "Sacrifice 3 legendary cards. My dear Porasmes counts as 2 legendary cards.",
+           "Discard 18 cards from your graveyard.",
+           "Sacrifice either Porasmes or 2 legendary cards.",
            "An unused request from any other lordling... But doubled."
         ]
     },
     "conditionDeck": {
         "gaidda": [
-            "A card is drawn",
-            "A card is discarded",
+            "Cards are drawn",
+            "Cards are discarded",
             "A card is used",
-            "A card from hand is given",
-            "A card abandons the discard pile"
+            "Cards are given or traded",
+            "Cards abandon the discard pile"
         ],
         "noumi": [
             "Money is earned",
             "Money is lost to the bank",
-            "Money is stolen",
+            "Money changes ownership",
             "Money is invested",
             "Investment profits"
         ],
@@ -761,17 +761,17 @@
         ],
         "bumandow": [
             "An effect card is drawn o discovered",
-            "The top card of the deck is discarded",
             "A condition card is drawn or discovered",
+            "A Bumandow card is used or triggers its play effect",
             "You, CURRENT PLAYER, choose this condition for me. Anything, really. Even if it's oddly specific.",
             "ThE UnExPeCtEd! Draw a condition and whenever it is met, swap it for another random condition. It's changing :)"
         ],
         "hesif": [
-            "Blood drops are used",
+            "Blood drops are used or lost",
             "Blood drops are earned",
             "A card is sacrificed",
             "A played card changes ownership",
-            "A Hesif played card triggers its play effect"
+            "A Hesif played card is used or triggers its play effect"
         ]
     },
     "effectDeck": {
@@ -821,7 +821,7 @@
             "Discard a card or lose 1 coin to discover a card",
             "Discard a card or lose 2 coins to find a common card",
             "Discard a card or lose 3 coins to find a rare card",
-            "Discard a card or lose 3 coins to have another turn"
+            "Next turn, have another turn"
         ],
         "bumandow": [
             "Draw a random effect and every player triggers it",
@@ -837,5 +837,8 @@
             "Discard a card to get a blood drop",
             "Make a player lose 1 blood drop"
         ]
-    }
+    },
+    "ideas": [
+        "Reduce every request by 1/3. Ysault is especially painful since everyone is dealing dmg"
+    ]
 }

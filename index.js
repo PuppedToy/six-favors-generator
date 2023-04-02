@@ -7,6 +7,7 @@ const WORD_WRAP_THRESHOLD = 42;
 const CARD_BODY_LINE_APPROXIMATED_LENGTH = 25;
 const CARD_FLAVOUR_LINE_APPROXIMATED_LENGTH = 18;
 const CARD_BODY_LINE_HEIGHT = 6;
+const VERSION = '2.0';
 
 const lords = {
   gaidda: {
@@ -109,6 +110,17 @@ function getFlavourTextBuffer(text, lord) {
   });
 }
 
+function getVersionText() {
+  return getTextBuffer(`Six Favors by PuppedToy - v${VERSION}`, 'white', {
+    textHeight: 20,
+    textWidth: 78,
+    fontSize: 2,
+    fontFamily: 'Arial',
+    fontStyle: 'italic',
+    fontWeight: 'default',
+  });
+}
+
 function getTextBuffer(text, color, {textWidth, textHeight, fontSize, fontFamily, fontWeight, customThreshold, fontStyle}) {
     const wrap = wordwrap(customThreshold || WORD_WRAP_THRESHOLD, {cut: true});
 
@@ -186,6 +198,10 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
 
     let playTextExtraTop = parseInt(useText.length / CARD_BODY_LINE_APPROXIMATED_LENGTH) * CARD_BODY_LINE_HEIGHT;
 
+    const versionTop = 535;
+    const versionLeft = 240;
+    const versionTextImage = getVersionText();
+
     const [
       frameBuffer,
       imageBuffer,
@@ -197,6 +213,7 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
       hpTextBuffer,
       nameTextBuffer,
       flavourTextBuffer,
+      versionTextBuffer,
     ] = await Promise.all([
       frameResizer,
       imageResizer,
@@ -208,6 +225,7 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
       hpTextImage,
       nameTextImage,
       flavourTextImage,
+      versionTextImage,
     ]);
     const textTop = 260;
     const textLeft = 30;
@@ -252,6 +270,10 @@ async function generateCard(lord, rarity, cardImagePath, name, costText, hpText,
             input: playIconBuffer,
             top: textTop + 42 + playTextExtraTop,
             left: textLeft,
+        },{
+            input: versionTextBuffer,
+            top: versionTop,
+            left: versionLeft,
         }])
       .toFile(outputPath);
       
@@ -287,16 +309,22 @@ async function generateLordCard(lord, rarity, cardImagePath, name, text, outputP
     const nameTextTop = 30 + extraNameTop;
     const textImage = getCardTextBuffer(text, lord, '');
 
+    const versionTop = 535;
+    const versionLeft = 240;
+    const versionTextImage = getVersionText();
+
     const [
       frameBuffer,
       imageBuffer,
       textBuffer,
       nameTextBuffer,
+      versionTextBuffer,
     ] = await Promise.all([
       frameResizer,
       imageResizer,
       textImage,
       nameTextImage,
+      versionTextImage,
     ]);
     const textTop = 260;
     const textLeft = 30;
@@ -317,6 +345,10 @@ async function generateLordCard(lord, rarity, cardImagePath, name, text, outputP
             input: textBuffer,
             top: textTop,
             left: textLeft,
+        },{
+            input: versionTextBuffer,
+            top: versionTop,
+            left: versionLeft,
         }])
       .toFile(outputPath);
       
