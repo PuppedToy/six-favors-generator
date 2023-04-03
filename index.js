@@ -7,7 +7,7 @@ const WORD_WRAP_THRESHOLD = 42;
 const CARD_BODY_LINE_APPROXIMATED_LENGTH = 25;
 const CARD_FLAVOUR_LINE_APPROXIMATED_LENGTH = 18;
 const CARD_BODY_LINE_HEIGHT = 6;
-const VERSION = '2.0';
+const VERSION = '2.1';
 
 const lords = {
   gaidda: {
@@ -95,6 +95,7 @@ function getCardTextBuffer(text, lord, iconSkip = '     ') {
     textWidth: 78,
     fontSize: 4,
     fontFamily: 'Arial',
+    customThreshold: iconSkip ? WORD_WRAP_THRESHOLD : WORD_WRAP_THRESHOLD - 3,
   });
 }
 

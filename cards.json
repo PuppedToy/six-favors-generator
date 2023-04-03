@@ -6,9 +6,9 @@
                 "rarity": "common",
                 "cost": 6,
                 "hp": 3,
-                "useText": "Draw a card.",
+                "useText": "Make a player discard a card.",
                 "flavourText": "It's not a bad omen, it's just a cat.",
-                "playText": "Whenever a card is discarded, charge 1. As an action, uncharge 3 to draw a card."
+                "playText": "Whenever cards are discarded, charge 1. Uncharge 4 to draw a card."
             },
             {
                 "name": "Elven Librarian",
@@ -18,7 +18,7 @@
                 "top": 50,
                 "useText": "Draw a card.",
                 "flavourText": "The library is open to all, but only the wise can find what they seek.",
-                "playText": "Whenever a card is drawn, charge 1. As an action, uncharge 3 to draw a card."
+                "playText": "Whenever cards are drawn from other source, charge 1. Uncharge 6 to draw a card."
             },
             {
                 "name": "Lake of Purity",
@@ -27,7 +27,7 @@
                 "hp": 3,
                 "useText": "Draw a card.",
                 "flavourText": "The lake is a place of peace and tranquility.",
-                "playText": "Whenever a card is drawn, earn a coin."
+                "playText": "Whenever cards are drawn, charge 1. Uncharge 4 to earn a coin."
             },
             {
                 "name": "Greedy Vulture",
@@ -36,25 +36,25 @@
                 "hp": 4,
                 "useText": "Trade a card to earn 3 coins.",
                 "flavourText": "It's not stealing if you don't get caught.",
-                "playText": "As an action, give a card to earn 5 coins."
+                "playText": "Whenever coins are earned, charge 1. Uncharge 4 to make a player discard a card."
             },
             {
                 "name": "Lonely Wolf",
                 "rarity": "rare",
-                "cost": 7,
+                "cost": 9,
                 "hp": 4,
-                "useText": "Give a card to earn 6 coins.",
+                "useText": "Make every other player give a card.",
                 "flavourText": "It used to be a pack wolf, but it got kicked out for being too greedy.",
-                "playText": "Whenever a card is given, earn a coin."
+                "playText": "Whenever cards change ownership, earn 2 coins."
             },
             {
                 "name": "Elven Hunter",
                 "rarity": "rare",
                 "cost": 9,
                 "hp": 4,
-                "useText": "Discard a card to deal 3 damage.",
+                "useText": "Give a card to a player to to deal 4 damage to a card that player owns.",
                 "flavourText": "The hunter is a master of the bow, and a master of the forest.",
-                "playText": "Whenever a card is discarded, deal 1 damage."
+                "playText": "Whenever cards are discarded, charge 1. Uncharge 2 to deal 1 damage."
             },
             {
                 "name": "Poisonous Spider",
@@ -63,7 +63,7 @@
                 "hp": 4,
                 "useText": "Make someone discard 2 cards.",
                 "flavourText": "The actual breed is unknown, but it's definitely poisonous.",
-                "playText": "Whenever you make someone discard a card, draw a card."
+                "playText": "Whenever cards are discarded, draw a card."
             },
             {
                 "name": "Omont: The Bear King",
@@ -71,18 +71,18 @@
                 "cost": 12,
                 "hp": 5,
                 "top": 50,
-                "useText": "Deal 2 damage to force the owner to discard a card.",
+                "useText": "Deal 2 damage to make the owner to discard a card.",
                 "flavourText": "Omont rules the forest with an iron paw.",
-                "playText": "Whenever 2 or more damage are dealt, you can force the target's owner to discard a card."
+                "playText": "Whenever 2 or more damage are dealt, you can make any player to discard a card."
             },
             {
                 "name": "Haund: Ancient Tree",
                 "rarity": "epic",
                 "cost": 12,
                 "hp": 5,
-                "useText": "Draw 2 cards from either the deck or the discard pile.",
+                "useText": "Draw 1 card from the deck and 2 cards from the discard pile. Then, trade 1 card.",
                 "flavourText": "Legend says that Haund will become human once she earns 150 coins.",
-                "playText": "As an action, pay a coin to draw a card from the discard pile."
+                "playText": "At the end of the turn, charge 1. Uncharge 2 to draw a card. You can choose to draw it from the discard pile paying a coin."
             },
             {
                 "name": "Sokel: Druid of Gaidda",
@@ -91,7 +91,7 @@
                 "hp": 5,
                 "useText": "Draw 5 cards to give 2 cards.",
                 "flavourText": "Sokel is generous, but only to those who are worthy.",
-                "playText": "Whenever another player gives a card, you have priority to receive it."
+                "playText": "Whenever another player gives a card, you have priority to receive it. As an action, pay 3 coins to make someone give a card."
             },
             {
                 "name": "Baby Sapling",
@@ -100,7 +100,7 @@
                 "hp": 2,
                 "useText": "Draw a card to make every player draw a card",
                 "flavourText": "Awww! It's a baby tree!",
-                "playText": "Whenever you draw a card, charge 1. Uncharge 6 and sacrifice this to draw 6."
+                "playText": "Whenever you draw a card, charge 1. Uncharge 9 and sacrifice this to draw 6."
             },
             {
                 "name": "Wanta: Dragon of Life",
@@ -109,7 +109,7 @@
                 "hp": 6,
                 "useText": "Draw a card from any graveyard 3 times.",
                 "flavourText": "Wanta is deeply connected to everything in the forest. Even the dead.",
-                "playText": "Before you draw, you can choose to draw from any graveyard or the discard pile instead. As an action, deal 1 damage to a card you own to draw a card."
+                "playText": "Before you draw, you can choose to draw from any graveyard or the discard pile instead. As an action, draw a card."
             }
         ],
         "noumi": [
@@ -119,9 +119,9 @@
                 "cost": 6,
                 "hp": 3,
                 "top": 50,
-                "useText": "Earn 3 coins.",
+                "useText": "Invest 4 coins.",
                 "flavourText": "The bank always wins.",
-                "playText": "Whenever coins are earned, charge 1. As an action, uncharge 3 to invest 3 coins."
+                "playText": "Whenever coins are earned, charge 1. Uncharge 6 to invest 3 coins."
             },
             {
                 "name": "Traveling Salesman",
@@ -129,7 +129,7 @@
                 "cost": 6,
                 "hp": 3,
                 "top": -50,
-                "useText": "Earn 3 coins.",
+                "useText": "Steal 2 coins.",
                 "flavourText": "See the salesman's wares. They have gummy bears!",
                 "playText": "Whenever you draw a card, you may discard it to earn 4 coins."
             },
@@ -141,7 +141,7 @@
                 "top": -50,
                 "useText": "Earn 3 coins.",
                 "flavourText": "The richer, the deadlier. Or so the saying goes.",
-                "playText": "Whenever coins are lost to the bank, charge 1. As an action, uncharge 3 to deal 1 damage."
+                "playText": "Whenever coins are lost to the bank, charge 1. Uncharge 4 to deal 1 damage."
             },
             {
                 "name": "Humble Noble",
@@ -150,7 +150,7 @@
                 "hp": 4,
                 "useText": "Steal 4 coins.",
                 "flavourText": "The noble is humble, but the noble is also rich.",
-                "playText": "Whenever coins are lost to the bank, charge 1. Uncharge 3 to steal 2 coins."
+                "playText": "Whenever coins are lost to the bank, charge 1. Uncharge 4 to steal 2 coins."
             },
             {
                 "name": "Greedy Wizard",
@@ -158,9 +158,9 @@
                 "cost": 9,
                 "hp": 4,
                 "top": 35,
-                "useText": "Invest 4 coins.",
+                "useText": "Invest 6 coins.",
                 "flavourText": "All those coins invested in a magic academy for this...",
-                "playText": "Whenever you profit, profit 1 extra for every 3 coins of profit."
+                "playText": "Whenever you profit, profit 1 extra coin for every 2 coins of investment."
             },
             {
                 "name": "Mercenary",
@@ -168,9 +168,9 @@
                 "cost": 7,
                 "hp": 4,
                 "top": 25,
-                "useText": "Lose 4 coins to deal 1 damage twice.",
+                "useText": "Lose 2 coins to deal 1 damage twice.",
                 "flavourText": "Plain and simple deal. You give coin, I give death.",
-                "playText": "As an action, lose 3 coins to deal 1 damage."
+                "playText": "Whenever coins are lost to the bank, charge 1. Uncharge 3 to deal 1 damage."
             },
             {
                 "name": "Shiny Knight",
@@ -188,9 +188,9 @@
                 "cost": 12,
                 "hp": 5,
                 "top": -50,
-                "useText": "Earn 7 coins.",
+                "useText": "Earn 8 coins.",
                 "flavourText": "Noumi's favourite place to picnic.",
-                "playText": "At the end of the turn, earn a coin."
+                "playText": "At the end of the turn, earn 2 coins."
             },
             {
                 "name": "Edenwr: Duke of Einde",
@@ -198,9 +198,9 @@
                 "cost": 12,
                 "hp": 5,
                 "top": 35,
-                "useText": "Steal 5 coins.",
+                "useText": "Steal 6 coins.",
                 "flavourText": "Edenwr is known for always finding a way to get what he wants.",
-                "playText": "Whenever another player plays a card, steal 1 from that player."
+                "playText": "Whenever another player plays a card, steal 1 from that player. If that player does not have a coin, deal 2 damage to the played card instead."
             },
             {
                 "name": "Anangith: High Inquisitor",
@@ -210,7 +210,7 @@
                 "top": 35,
                 "useText": "Sacrifice a card you own to earn 15 coins.",
                 "flavourText": "She is just praying for your soul. Which happens to be in your wallet.",
-                "playText": "Whenever a card you do not own card dies, earn 3 coins. If it was a sacrifice, earn 6 instead."
+                "playText": "Whenever a card card dies, earn 3 coins. If it was a sacrifice, earn 6 instead."
             },
             {
                 "name": "Beggar",
@@ -219,7 +219,7 @@
                 "hp": 2,
                 "useText": "Earn 3 coins to make every player earn 3 coins.",
                 "flavourText": "The beggar is the most generous of them all.",
-                "playText": "Whenever you earn coins, charge one. Uncharge 6 and sacrifice this to earn 18."
+                "playText": "Whenever you earn coins, charge one. Uncharge 9 and sacrifice this to earn 18."
             },
             {
                 "name": "Veynu: Dragon of Greed",
@@ -228,7 +228,7 @@
                 "hp": 6,
                 "useText": "Give any amount of coins to a player to take control of a card they own worth double the value paid.",
                 "flavourText": "Veynu was very good at math when she was a kid.",
-                "playText": "Whenever any player spends coins, you can pay the same amount. If you do, you steal whatever they bought. As an action, give a card to steal 3 coins to that player."
+                "playText": "Whenever any player spends coins, you can pay the same amount to steal whatever they bought. As an action, give a card to steal 3 coins to that player."
             }
         ],
         "ysault": [
@@ -238,9 +238,9 @@
                 "cost": 6,
                 "hp": 3,
                 "top": 40,
-                "useText": "Deal 1 damage.",
+                "useText": "Give 1 power.",
                 "flavourText": "I swear I heard him humming while he was working.",
-                "playText": "At the end of the turn, charge 1. As an action, uncharge 3 to give 1 power."
+                "playText": "At the end of the turn, charge 1. Uncharge 3 to give 1 power."
             },
             {
                 "name": "War Horse",
@@ -249,7 +249,7 @@
                 "hp": 3,
                 "useText": "Deal 1 damage.",
                 "flavourText": "Riding a horse is a lot more fun than walking.",
-                "playText": "Whenever damage is dealt from other sources, charge 1. Uncharge 3 to deal 1 damage."
+                "playText": "Whenever damage is dealt from other sources, charge 1. Uncharge 4 to deal 1 damage."
             },
             {
                 "name": "Lake of Power",
@@ -259,7 +259,7 @@
                 "top": -70,
                 "useText": "Deal 1 damage.",
                 "flavourText": "The lake is a source of power, but it's also a source of... Water?",
-                "playText": "Whenever damage is dealt, charge 1. Uncharge 3 to give 1 power."
+                "playText": "Whenever damage is dealt, charge 1. Uncharge 4 to give 1 power."
             },
             {
                 "name": "Berserker",
@@ -268,16 +268,16 @@
                 "hp": 3,
                 "useText": "Deal 1 damage to a card you own to deal 2 damage.",
                 "flavourText": "Seriously. How has he even reached adulthood?",
-                "playText": "As an action, deal 1 damage to this card to deal 1 damage. While this has 1 hp, at the end of the turn deal 1 damage."
+                "playText": "Whenever this is dealt damage, deal 1 damange. At the end of the turn, if this card's power is 1, deal 1 damage and give 1 power to this. As an action, deal 1 damage to this."
             },
             {
                 "name": "Elite Archer",
                 "rarity": "rare",
                 "cost": 9,
                 "hp": 4,
-                "useText": "Discard a card to deal 2 damage.",
+                "useText": "Mark a card. At the end of next turn, deal it 2 damage.",
                 "flavourText": "Bulls-eye!",
-                "playText": "At the end of the turn, charge 1. As an action, uncharge 3 to deal 2 damage."
+                "playText": "At the end of the turn, charge 1. Uncharge 3 to deal 2 damage."
             },
             {
                 "name": "War Mage",
@@ -285,18 +285,18 @@
                 "cost": 8,
                 "hp": 4,
                 "top": 50,
-                "useText": "Give 1 power.",
+                "useText": "Give 2 power.",
                 "flavourText": "Her favourite trick is turning cats into panthers.",
-                "playText": "Whenever cards are seen or the deck is manipulated, charge 1. Uncharge 2 to give 1 power to another card."
+                "playText": "Whenever other source gives power, charge 1. Uncharge 4 to give 2 power to any card."
             },
             {
                 "name": "Dread Catapult",
                 "rarity": "rare",
                 "cost": 9,
                 "hp": 4,
-                "useText": "Choose a player. At the end of the next turn, that player deals 1 damage to a card they own twice.",
+                "useText": "Choose a player. At the end of the next turn, that player deals 1 damage to a card they own 3 times.",
                 "flavourText": "It makes it rain death.",
-                "playText": "Whenever a card you own is killed, charge 1. As an action, uncharge 1 to trigger this card's use effect."
+                "playText": "Whenever a card is discarded, choose a player. That player deals 1 damage to a card they own 2 times."
             },
             {
                 "name": "Hisju: Hired Assassin",
@@ -306,7 +306,7 @@
                 "top": 50,
                 "useText": "Lose 7 coins to kill any non-legendary card.",
                 "flavourText": "Hisju never talks. Hisju never smiles. But Hisju never misses his target.",
-                "playText": "At the end of the turn, lose 1 coin. If you don't, sacrifice this. If you do, charge 1. As an action, uncharge 4 to kill any card."
+                "playText": "At the end of the turn, lose 1 coin. If you don't, sacrifice this. If you do, charge 1. Uncharge 4 to kill any card."
             },
             {
                 "name": "Edoura: Necromancer",
@@ -315,7 +315,7 @@
                 "hp": 5,
                 "useText": "Resurrect a common card.",
                 "flavourText": "She is actually very friends of Plarath. They studied together.",
-                "playText": "Whenever a card is killed, charge 1. Uncharge 4 to resurrect any card. As an action, sacrifice a card to earn a blood drop."
+                "playText": "Whenever a card is killed, charge 1. Uncharge 3 to resurrect any card. As an action, sacrifice a card to earn a blood drop."
             },
             {
                 "name": "Orsonn: Ysault's General",
@@ -325,7 +325,7 @@
                 "top": 50,
                 "useText": "Deal 1 damage to a card you own to give 3 power to another card.",
                 "flavourText": "The whip is the best tool to keep your troops motivated.",
-                "playText": "At the end of the turn, charge 1. Uncharge 3 to give 1 power to every card you own."
+                "playText": "Whenever damage is dealt, charge 1. Uncharge 3 to choose one: give 2 power to a card or give 1 power to every other card you own. As an action, deal 1 damage to a card you own to give 2 power to another card."
             },
             {
                 "name": "Rookie Squire",
@@ -356,7 +356,7 @@
                 "top": 35,
                 "useText": "See 2.",
                 "flavourText": "Your eyes and your ears",
-                "playText": "Whenever cards are seen, earn a coin."
+                "playText": "Whenever cards are seen, charge 1. Uncharge 4 to earn 3 coins."
             },
             {
                 "name": "Clairvoyant",
@@ -375,7 +375,7 @@
                 "top": -50,
                 "useText": "See 2.",
                 "flavourText": "You may see the future in your own reflection.",
-                "playText": "Whenever cards are seen, charge one. Uncharge 3 to draw a card."
+                "playText": "Whenever cards are seen, charge one. Uncharge 4 to draw a card."
             },
             {
                 "name": "Magic Tinkerer",
@@ -385,16 +385,16 @@
                 "useText": "Discover 1.",
                 "top": 35,
                 "flavourText": "She is happy with her job. She gets to play with magic all day.",
-                "playText": "Whenever coins are lost to the bank, charge 1. Uncharge 3 to discover 1."
+                "playText": "Whenever coins are lost to the bank, charge 1. Uncharge 4 to discover 1."
             },
             {
                 "name": "Old Wizard",
                 "rarity": "rare",
-                "cost": 8,
+                "cost": 7,
                 "hp": 3,
                 "useText": "Request a card. If you get it, give a coin to the former owner.",
                 "flavourText": "I need to retire. I'm too old for this.",
-                "playText": "Whenever cards are seen, charge 1. Uncharge 3 to request a card."
+                "playText": "Whenever the deck is manipulated, charge 1. Uncharge 3 to request a card."
             },
             {
                 "name": "Plarath's Apprentice",
@@ -404,16 +404,16 @@
                 "top": -60,
                 "useText": "Alter the future 3. Then draw a card.",
                 "flavourText": "Plarath still doesn't know he has an apprentice.",
-                "playText": "Whenever the deck is maniputaled, see the first 3 cards from the deck and charge 1. As an action, uncharge 1 to draw a card."
+                "playText": "Whenever cards are seen, charge 1. Uncharge 2 to alter the future 4."
             },
             {
                 "name": "Magic Swordsman",
                 "rarity": "rare",
                 "cost": 9,
                 "hp": 4,
-                "useText": "Deal 1 damage. If this kills, request a card from the owner.",
+                "useText": "Deal 1 damage. If this kills, find a rare card.",
                 "flavourText": "Normal swords are dull and dirty. Magic cuts cleaner.",
-                "playText": "Whenever cards are seen, charge 1. Uncharge 3 to deal 1 damage."
+                "playText": "Whenever the deck is manipulated, charge 1. Uncharge 2 to deal 1 damage."
             },
             {
                 "name": "Ghenbe: The Dragon Summoner",
@@ -422,16 +422,16 @@
                 "hp": 5,
                 "useText": "Find a non-legendary card. If it is common, find another common card. If it is rare, earn 3.",
                 "flavourText": "She wakes up Mithes every morning through a portal.",
-                "playText": "Whenever other source manipulates the deck, charge 1. Uncharge 6 to find a legendary card."
+                "playText": "Whenever other source manipulates the deck, charge 1. Uncharge 4 to find any card."
             },
             {
                 "name": "Simsi: The Time Weaver",
                 "rarity": "epic",
                 "cost": 12,
                 "hp": 5,
-                "useText": "See 6. Request 1. Then choose one: your next turn you have an extra action or make an opponent lose an action.",
+                "useText": "See 4. Request 1. Then choose one: your next turn you have an extra action or make an opponent lose an action.",
                 "flavourText": "Her elbow itches whenever she weaves time.",
-                "playText": "Whenever cards are seen, next turn you have 2 actions."
+                "playText": "Whenever other sources see cards, next turn you have 2 actions. Whenever you start a turn with an extra action, alter the future 3."
             },
             {
                 "name": "Plarath: Grand Archmage",
@@ -447,9 +447,9 @@
                 "rarity": "epic",
                 "cost": 3,
                 "hp": 2,
-                "useText": "Everyone shows 2 cards.",
+                "useText": "Make every player show 2 cards to see 2.",
                 "flavourText": "Really, it's unreadable. Stop trying!",
-                "playText": "Whenever anyone sees, charge 1. Uncharge 12 to alter the future 15. Then draw 5 cards."
+                "playText": "Whenever you see, charge 1. Uncharge 6 to alter the future 12. Then draw 4 cards."
             },
             {
                 "name": "Mithes: Dragon of Magic",
@@ -459,7 +459,7 @@
                 "top": -60,
                 "useText": "See 6. Then, request 3 cards.",
                 "flavourText": "He can see through walls. Just saying.",
-                "playText": "At the end of the turn, alter the future 3. Before you draw, you can say the name of the card. If you guess it correctly, request a card."
+                "playText": "Before you draw, you can choose to discover or request a card instead. At the end of the turn, alter the future 9. As an action, see a player's hand."
             }
         ],
         "bumandow": [
@@ -470,7 +470,7 @@
                 "hp": 3,
                 "useText": "Play a random effect.",
                 "flavourText": "I was waiting for you all day.",
-                "playText": "Whenever you don't have a side quest, create a side quest. If the side side quest is fulfilled, sacrifice this to discover a random effect magnified by 6."
+                "playText": "Whenever you don't have a side quest, create a side quest. If the side side quest is fulfilled, discover an effect magnified by 6."
             },
             {
                 "name": "Suspicious Beverage",
@@ -490,7 +490,7 @@
                 "top": -60,
                 "useText": "Play a random effect.",
                 "flavourText": "It's actually a normal lake. But the fog is thick for some reason.",
-                "playText": "At the end of the turn, charge 1. Uncharge 3 to play a random effect."
+                "playText": "At the end of the turn, charge 1. Uncharge 2 to play a random effect."
             },
             {
                 "name": "Forbidden Ritual",
@@ -500,7 +500,7 @@
                 "top": -150,
                 "useText": "Discard the top card of the deck. Cast it's use effect.",
                 "flavourText": "It's forbidden because sometimes its not safe for work.",
-                "playText": "Draw a random condition. Whenever it is met, charge 1. Uncharge 9 to play the top card of the deck for free."
+                "playText": "When this is played, create a side quest. If it is fulfilled, sacrifice this to play the top 2 cards of the deck for free."
             },
             {
                 "name": "Pandora's Box",
@@ -510,7 +510,7 @@
                 "top": -60,
                 "useText": "Create a random secret.",
                 "flavourText": "The best present for a birthday party.",
-                "playText": "When this is played, create a side quest. If it is fulfilled, sacrifice this to play a card from your hand for free. Then, play a random effect magnified by 3."
+                "playText": "When this is played, create a side quest. If it is fulfilled, sacrifice this to create 4 random secrets."
             },
             {
                 "name": "Exiled Warlock",
@@ -519,17 +519,17 @@
                 "hp": 4,
                 "useText": "Play a random effect magnified by 2.",
                 "flavourText": "He was actually exlied for winning Seraneri at poker.",
-                "playText": "Get a random player passive while this is in play. Magnify it by 2."
+                "playText": "Whenever an effect from the effect deck is played from other source, play a random effect."
             },
             {
                 "name": "Unleashed Genie",
                 "rarity": "rare",
                 "cost": 9,
-                "hp": 5,
+                "hp": 4,
                 "top": -60,
-                "useText": "Every other player plays a common card for free. Then, play 5 random effects.",
+                "useText": "Every other player may play a common card for free. Then, play 5 random effects.",
                 "flavourText": "Living for the moment.",
-                "playText": "Whenever a card is played, cast its use effect if possible and deal 1 damage to this."
+                "playText": "Whenever a card is played, cast its use effect if possible. If it was casted, deal 1 damage to this."
             },
             {
                 "name": "Andis: The Tempest Caller",
@@ -537,16 +537,16 @@
                 "cost": 12,
                 "hp": 5,
                 "top": 50,
-                "useText": "Discover a random effect magnified by 3. If the target is not you, cast it on every other player.",
+                "useText": "Discover an effect magnified by 3. If the target is not you, cast it on every other player.",
                 "flavourText": "Andis has a very bad temper, but she controls it wonderfully.",
-                "playText": "Whenever you play a random effect on a player that is not you, play it on every other player."
+                "playText": "Whenever you play any effect on a player that is not you, you may play it on every other player. As an action, deal 1 damage to a card you own to discover an effect."
             },
             {
                 "name": "Herkil: Hesif's Herald",
                 "rarity": "epic",
                 "cost": 12,
                 "hp": 5,
-                "useText": "Sacrifice a card to get a blood drop. Then, cast its use effect magnified by 3.",
+                "useText": "Sacrifice a card to get a blood drop. Then, cast its use effect magnified by 2.",
                 "flavourText": "When Hesif whispered Herkil in the ear, he was already ready for her.",
                 "playText": "Whenever a card is killed, you may cast its use effect."
             },
@@ -558,7 +558,7 @@
                 "top": 25,
                 "useText": "Discover a new permanent game rule.",
                 "flavourText": "Imagine how hard it is to become the prophet of someone like Bumandow.",
-                "playText": "At the end of the turn, charge 1. Uncharge 3 to discover a permanent game rule. Uncharge 6 to discover a new permanent player passive."
+                "playText": "At the end of the turn, charge 1. Uncharge 3 to discover a permanent game rule. As an action, uncharge 6 to discover a new permanent player passive."
             },
             {
                 "name": "Mysterious Chest",
@@ -566,9 +566,9 @@
                 "cost": 3,
                 "hp": 2,
                 "top": -100,
-                "useText": "Every player plays a random effect.",
+                "useText": "Every player plays a random effect. Yours is magnified by 2.",
                 "flavourText": "Bumandow packaged it himself. Just for you.",
-                "playText": "Whenever a random effect is played, charge 1. Uncharge 6 to sacrifice this and get a random permanent player passive."
+                "playText": "Whenever you play an effect from the deck, charge 1. Uncharge 6 to sacrifice this and get a random player passive."
             },
             {
                 "name": "Hedreada: Dragon of Chaos",
@@ -576,9 +576,9 @@
                 "cost": 16,
                 "hp": 6,
                 "top": -40,
-                "useText": "Every player may play a Bumandow card for free. Then, every other player must give all their cards.",
+                "useText": "Every other player must give all their cards.",
                 "flavourText": "Hedreada and Bumandow met each other in the court, but none of them even knew what it was about.",
-                "playText": "At the end of the turn, discard the top card. You may trigger its use effect. As an action, you may choose to discover a permanent player passive. If you do, give control of this to any other player."
+                "playText": "At the end of the turn, every player gives a card. If you did not receive one, play a random effect magnified by 3. As an action, you may discover player passive to give control of this to another player."
             }
         ],
         "hesif": [
@@ -597,9 +597,9 @@
                 "rarity": "common",
                 "cost": 6,
                 "hp": 3,
-                "useText": "Spend a blood drop to make a player discard 2 cards of their choice.",
+                "useText": "Spend a blood drop to make a player discard 3 cards of their choice.",
                 "flavourText": "I got this poison from a very reliable source. I'm sure it's safe.",
-                "playText": "Draw a card for each blood drop spent."
+                "playText": "Whenever blood drops are spent, draw a card for each blood drop spent."
             },
             {
                 "name": "Lake of Decay",
@@ -627,7 +627,7 @@
                 "hp": 4,
                 "useText": "Spend 2 blood drops to make a player give you 5 coins and a card.",
                 "flavourText": "As if the others weren't corrupted!",
-                "playText": "Earn 4 coins for each blood drop spent."
+                "playText": "Whenever blood drops are spent, earn 4 coins for each blood drop spent."
             },
             {
                 "name": "Demonic Portal",
@@ -662,16 +662,16 @@
                 "rarity": "epic",
                 "cost": 12,
                 "hp": 5,
-                "useText": "Spend 4 blood drops to kill 2 cards. Don't get any blood drop for it.",
+                "useText": "Spend 4 blood drops to kill 2 cards. Don't get any blood for it.",
                 "flavourText": "You wouldn't understand how elloquently she speaks when it's time to kill.",
-                "playText": "At the end of the turn, you may spend a blood drop to charge 1. If you do not, sacrifice this. Uncharge 2 to kill a card."
+                "playText": "At the end of the turn, you may spend a blood drop to charge 1. If you do not, sacrifice this. Uncharge 2 to kill a card. Don't get any blood for it."
             },
             {
                 "name": "Fronnavou: Cursed King",
                 "rarity": "epic",
                 "cost": 12,
                 "hp": 5,
-                "useText": "Spend 3 blood drops to sacrifice a card. Then, trigger its use effect 3 times.",
+                "useText": "Spend 3 blood drops to sacrifice a card. Then, trigger its use effect magnified 3 times.",
                 "flavourText": "Cursed by himself because he wanted to rule the underworld.",
                 "playText": "Whenever you sacrifice a card, you may spend a blood drop to take control of another one of the same rarity."
             },
@@ -689,7 +689,7 @@
                 "rarity": "legendary",
                 "cost": 25,
                 "hp": 9,
-                "useText": "Spend 5 blood drops to choose any 3 Hesif cards you can see. Show them. Trigger their use effects in any order.",
+                "useText": "Spend 5 blood drops to choose any 3 Hesif cards you can see. Show them. Trigger their use effects for free in any order.",
                 "flavourText": "Not even Hesif dares to speak his name.",
                 "playText": "At the end of the turn, choose one: earn a blood drop, deal 3 damage, draw 3 cards, give 3 power or earn 9 coins. You may spend a blood drop to magnify by 2."
             }
@@ -699,8 +699,8 @@
         "gaidda": [
             "Discard 12 cards.",
             "Distribute 10 cards among other players.",
-            "Make someone have at least 10 cards less than you. Give them 6 cards.",
-            "Make everyone have at least 6 cards less than you. Distribute 6 cards as evenly as possible."
+            "Make someone have at least 6 cards less than you. Give them 6 cards.",
+            "Make everyone have at least 3 cards less than you. Distribute 6 cards as evenly as possible."
         ],
         "noumi": [
             "Pay 30 coins.",
@@ -709,19 +709,19 @@
             "Make everyone have at least 15 coins less than you. Distribute 15 coins as evenly as possible."
         ],
         "ysault": [
-            "Sacrifice cards worth 12 power or more.",
+            "Sacrifice cards worth 10 power or more.",
             "Distribute cards worth 9 power or more among other players.",
-            "Make someone have at least 9 power less than you. Give them cards worth 6 power.",
-            "Make everyone have at least 6 power less than you. Distribute cards worth 6 power as evenly as possible."
+            "Sacrifice 4 cards",
+            "Make someone have at least 6 power less than you. Give them control of cards worth at least 6 power."
         ],
         "seraneri": [
-            "Discard 8 cards from the same lord.",
-            "Discard 8 rare cards.",
-            "Discard 4 epic cads.",
-            "Discard 4 rare cards from the same lord."
+            "Discard 6 cards from the same lord.",
+            "Discard 6 rare cards.",
+            "Discard 3 epic cads.",
+            "Discard 3 rare cards from the same lord."
         ],
         "bumandow": [
-            "Draw 3 requests from other lords and halve their numbers. I want ALL of them at the same time."
+            "Draw 2 requests from other lords and halve their numbers (rounded up). I want both of them at the same time."
         ],
         "hesif": [
            "Pay 15 blood drops.",
@@ -750,14 +750,14 @@
             "A card is played",
             "A card is killed",
             "A card gets power",
-            "A card abandons the graveyard"
+            "Cards abandons the graveyard"
         ],
         "seraneri": [
             "Cards are seen",
+            "Cards are seen",
             "Cards are requested",
             "Cards are discovered",
-            "The deck is manipulated",
-            "Turns are altered"
+            "The deck is manipulated"
         ],
         "bumandow": [
             "An effect card is drawn o discovered",
@@ -809,23 +809,23 @@
             "Give 1 power",
             "Give 1 power",
             "Deal 1 damage to a card you own to give 2 power to another card",
-            "Choose a player. That player distributes 2 damage among cards they own."
+            "Choose a player. That player deals 1 to a card they own."
         ],
         "seraneri": [
             "See 1",
             "See 1",
-            "See 1",
-            "See 1",
+            "See 2",
+            "Alter the future 3",
             "Alter the future 4",
             "Discard a card or lose 2 coins to request a card",
             "Discard a card or lose 1 coin to discover a card",
             "Discard a card or lose 2 coins to find a common card",
             "Discard a card or lose 3 coins to find a rare card",
-            "Next turn, have another turn"
+            "Next turn, have 2 actions"
         ],
         "bumandow": [
             "Draw a random effect and every player triggers it",
-            "Discover a random effect and every player triggers it",
+            "Discover an effect and every player triggers it",
             "Each player draws a random effect and triggers it",
             "Discard the top card and every player triggers its use effect",
             "Discover a new rule"
