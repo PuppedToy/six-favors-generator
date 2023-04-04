@@ -18,7 +18,7 @@
                 "top": 50,
                 "useText": "Draw a card.",
                 "flavourText": "The library is open to all, but only the wise can find what they seek.",
-                "playText": "Whenever cards are drawn from other source, charge 1. Uncharge 6 to draw a card."
+                "playText": "Whenever cards are drawn from other source, charge 1. Uncharge 5 to draw a card."
             },
             {
                 "name": "Lake of Purity",
@@ -121,7 +121,7 @@
                 "top": 50,
                 "useText": "Invest 4 coins.",
                 "flavourText": "The bank always wins.",
-                "playText": "Whenever coins are earned, charge 1. Uncharge 6 to invest 3 coins."
+                "playText": "Whenever coins are earned, charge 1. Uncharge 4 to invest 3 coins."
             },
             {
                 "name": "Traveling Salesman",
@@ -354,7 +354,7 @@
                 "cost": 6,
                 "hp": 3,
                 "top": 35,
-                "useText": "See 2.",
+                "useText": "See 4.",
                 "flavourText": "Your eyes and your ears",
                 "playText": "Whenever cards are seen, charge 1. Uncharge 4 to earn 3 coins."
             },
@@ -363,7 +363,7 @@
                 "rarity": "common",
                 "cost": 6,
                 "hp": 3,
-                "useText": "See 2.",
+                "useText": "Alter the future 3.",
                 "flavourText": "He only watches. He never touches.",
                 "playText": "At the end of the turn, see 1."
             },
@@ -373,7 +373,7 @@
                 "cost": 6,
                 "hp": 3,
                 "top": -50,
-                "useText": "See 2.",
+                "useText": "See 4.",
                 "flavourText": "You may see the future in your own reflection.",
                 "playText": "Whenever cards are seen, charge one. Uncharge 4 to draw a card."
             },
@@ -468,9 +468,9 @@
                 "rarity": "common",
                 "cost": 6,
                 "hp": 3,
-                "useText": "Play a random effect.",
+                "useText": "Get a side quest.",
                 "flavourText": "I was waiting for you all day.",
-                "playText": "Whenever you don't have a side quest, create a side quest. If the side side quest is fulfilled, discover an effect magnified by 6."
+                "playText": "At the end of the turn, charge 1. Uncharge 2 to play a random effect."
             },
             {
                 "name": "Suspicious Beverage",
@@ -490,12 +490,12 @@
                 "top": -60,
                 "useText": "Play a random effect.",
                 "flavourText": "It's actually a normal lake. But the fog is thick for some reason.",
-                "playText": "At the end of the turn, charge 1. Uncharge 2 to play a random effect."
+                "playText": "At the end of the turn, charge 1. Uncharge 2 to make a player play a random effect. Then, play a random effect magnified by 2."
             },
             {
                 "name": "Forbidden Ritual",
                 "rarity": "rare",
-                "cost": 9,
+                "cost": 7,
                 "hp": 4,
                 "top": -150,
                 "useText": "Discard the top card of the deck. Cast it's use effect.",
@@ -506,7 +506,7 @@
                 "name": "Pandora's Box",
                 "rarity": "rare",
                 "cost": 8,
-                "hp": 3,
+                "hp": 4,
                 "top": -60,
                 "useText": "Create a random secret.",
                 "flavourText": "The best present for a birthday party.",
@@ -556,9 +556,9 @@
                 "cost": 12,
                 "hp": 5,
                 "top": 25,
-                "useText": "Discover a new permanent game rule.",
+                "useText": "Discover a game rule. Then, apply its effect magnified by 3.",
                 "flavourText": "Imagine how hard it is to become the prophet of someone like Bumandow.",
-                "playText": "At the end of the turn, charge 1. Uncharge 3 to discover a permanent game rule. As an action, uncharge 6 to discover a new permanent player passive."
+                "playText": "At the end of the turn, charge 1. Uncharge 3 to get a random player passive."
             },
             {
                 "name": "Mysterious Chest",
@@ -588,18 +588,18 @@
                 "cost": 6,
                 "hp": 3,
                 "top": -60,
-                "useText": "Spend a blood drop to make a player sacrifice a card of their choice.",
+                "useText": "Spend a blood drop to make a player sacrifice a card.",
                 "flavourText": "Why would anyone open a chest so obviously trapped?",
-                "playText": "Whenever one of your cards is killed, get a blood drop."
+                "playText": "Whenever cards are killed, get a blood drop."
             },
             {
                 "name": "Poison Dealer",
                 "rarity": "common",
                 "cost": 6,
                 "hp": 3,
-                "useText": "Spend a blood drop to make a player discard 3 cards of their choice.",
+                "useText": "Spend a blood drop to draw a card and make a player discard 2 cards.",
                 "flavourText": "I got this poison from a very reliable source. I'm sure it's safe.",
-                "playText": "Whenever blood drops are spent, draw a card for each blood drop spent."
+                "playText": "Whenever blood drops are spent, draw a card and make a player discard a card."
             },
             {
                 "name": "Lake of Decay",
@@ -609,7 +609,7 @@
                 "top": -35,
                 "useText": "Spend a blood drop to make a player lose 2 blood drops.",
                 "flavourText": "Porasmes pees in here. I suppose now you understand everything.",
-                "playText": "At the end of the turn, charge 1. Uncharge 3 to earn a blood drop."
+                "playText": "At the end of the turn, sacrifice a card to earn a blood drop."
             },
             {
                 "name": "Undead Horse",
@@ -625,9 +625,9 @@
                 "rarity": "rare",
                 "cost": 9,
                 "hp": 4,
-                "useText": "Spend 2 blood drops to make a player give you 5 coins and a card.",
+                "useText": "Spend 2 blood drops to request 2 cards and steal 6 coins.",
                 "flavourText": "As if the others weren't corrupted!",
-                "playText": "Whenever blood drops are spent, earn 4 coins for each blood drop spent."
+                "playText": "Whenever blood drops are spent, steal 3 coins."
             },
             {
                 "name": "Demonic Portal",
@@ -635,36 +635,36 @@
                 "cost": 9,
                 "hp": 4,
                 "top": -50,
-                "useText": "Spend 2 blood drops to return a card of your choice to its owner's hand for each other player.",
+                "useText": "Spend 2 blood drops to play 2 common cards for free.",
                 "flavourText": "Hesif has free tickets to the underworld.",
-                "playText": "As an action, you may spend 3 blood drops to play a card from your graveyard for free."
+                "playText": "Whenever blood drops are spent, charge 1. Un charge 3 to spend 2 blood drops. If you do, play either the top card of the deck or any card from your graveyard for free."
             },
             {
                 "name": "Possessed Child",
                 "rarity": "rare",
-                "cost": 9,
+                "cost": 7,
                 "hp": 3,
                 "useText": "Spend 2 blood drops to make every other player sacrifice a card of their choice.",
                 "flavourText": "No one knows what happened to the parents.",
-                "playText": "At the end of the turn, you may spend 1 blood drop to either draw 3 cards or earn 9 coins. If you do not, give control of this to another player."
+                "playText": "At the end of the turn, sacrifie a card to get a blood drop to give control of this to another player."
             },
             {
                 "name": "Avicath: Failed Experiment",
                 "rarity": "epic",
                 "cost": 12,
                 "hp": 2,
-                "useText": "Spend 3 blood drops to take control of the target non-legendary card.",
+                "useText": "Spend 3 blood drops to take control of a target non-legendary card.",
                 "flavourText": "Hesif's first attempt at creating a living weapon. It didn't go well.",
-                "playText": "At the end of the turn, give 1 power to this. If this has 6 or more, give it 2 instead. As an action, you may sacrifice this to earn as many blood drops as half its power."
+                "playText": "Whenever cards are sacrificed, give 3 power to this. If this has 6 or more, give it 2 instead. As an action, you may sacrifice this to earn as many blood drops as half its power."
             },
             {
                 "name": "Sze: Assassin Shade",
                 "rarity": "epic",
                 "cost": 12,
                 "hp": 5,
-                "useText": "Spend 4 blood drops to kill 2 cards. Don't get any blood for it.",
+                "useText": "Spend 5 blood drops to kill 2 cards.",
                 "flavourText": "You wouldn't understand how elloquently she speaks when it's time to kill.",
-                "playText": "At the end of the turn, you may spend a blood drop to charge 1. If you do not, sacrifice this. Uncharge 2 to kill a card. Don't get any blood for it."
+                "playText": "At the end of the turn, spend a blood or sacrifice a card to charge 1. If you do not, sacrifice this. Uncharge 3 to kill a card."
             },
             {
                 "name": "Fronnavou: Cursed King",
@@ -673,14 +673,14 @@
                 "hp": 5,
                 "useText": "Spend 3 blood drops to sacrifice a card. Then, trigger its use effect magnified 3 times.",
                 "flavourText": "Cursed by himself because he wanted to rule the underworld.",
-                "playText": "Whenever you sacrifice a card, you may spend a blood drop to take control of another one of the same rarity."
+                "playText": "Whenever a card is sacrificed, you may spend 2 blood drops to take control of another one of the same rarity. As an action, sacrifice a card."
             },
             {
                 "name": "Evil Sapling",
                 "rarity": "epic",
                 "cost": 3,
                 "hp": 2,
-                "useText": "Every player loses a blood drop, discards a card, sacrifices a card and loses 5 coins.",
+                "useText": "Earn a blood drop to make every player earn a blood drop.",
                 "flavourText": "The forgotten younger brother of the baby sapling.",
                 "playText": "Whenever you spend blood drops, charge 1. Uncharge 6 and sacrifice this to earn 6 blood drops."
             },
@@ -691,28 +691,28 @@
                 "hp": 9,
                 "useText": "Spend 5 blood drops to choose any 3 Hesif cards you can see. Show them. Trigger their use effects for free in any order.",
                 "flavourText": "Not even Hesif dares to speak his name.",
-                "playText": "At the end of the turn, choose one: earn a blood drop, deal 3 damage, draw 3 cards, give 3 power or earn 9 coins. You may spend a blood drop to magnify by 2."
+                "playText": "Whenever cards are sacrificed, earn 2 blood drops. Whenever blood drops are spent, make a player sacrifice a card. As an action, sacrifice a card to trigger its use effect magnified 2 times."
             }
         ]
     },
     "requestDeck": {
         "gaidda": [
-            "Discard 12 cards.",
-            "Distribute 10 cards among other players.",
-            "Make someone have at least 6 cards less than you. Give them 6 cards.",
-            "Make everyone have at least 3 cards less than you. Distribute 6 cards as evenly as possible."
+            "Discard 10 cards.",
+            "Distribute 9 cards among other players.",
+            "Make someone have at least 6 cards less than you. Give them 3 cards.",
+            "Make everyone have at least 3 cards less than you. Distribute 3 cards as evenly as possible."
         ],
         "noumi": [
-            "Pay 30 coins.",
-            "Distribute 24 coins among other players.",
-            "Make someone have at least 24 coins less than you. Give them 15 coins.",
-            "Make everyone have at least 15 coins less than you. Distribute 15 coins as evenly as possible."
+            "Pay 24 coins.",
+            "Distribute 21 coins among other players.",
+            "Make someone have at least 18 coins less than you. Give them 9 coins.",
+            "Make everyone have at least 9 coins less than you. Distribute 9 coins as evenly as possible."
         ],
         "ysault": [
             "Sacrifice cards worth 10 power or more.",
             "Distribute cards worth 9 power or more among other players.",
-            "Sacrifice 4 cards",
-            "Make someone have at least 6 power less than you. Give them control of cards worth at least 6 power."
+            "Sacrifice 4 cards.",
+            "Make someone have at least 6 power less than you. Give them control of cards worth at least 3 power."
         ],
         "seraneri": [
             "Discard 6 cards from the same lord.",
@@ -721,11 +721,14 @@
             "Discard 3 rare cards from the same lord."
         ],
         "bumandow": [
+            "Draw 2 requests from other lords and halve their numbers (rounded up). I want both of them at the same time.",
+            "Draw 2 requests from other lords and halve their numbers (rounded up). I want both of them at the same time.",
+            "Draw 2 requests from other lords and halve their numbers (rounded up). I want both of them at the same time.",
             "Draw 2 requests from other lords and halve their numbers (rounded up). I want both of them at the same time."
         ],
         "hesif": [
-           "Pay 15 blood drops.",
-           "Discard 18 cards from your graveyard.",
+           "Pay 10 blood drops.",
+           "Discard 12 cards from your graveyard.",
            "Sacrifice either Porasmes or 2 legendary cards.",
            "An unused request from any other lordling... But doubled."
         ]
@@ -763,8 +766,8 @@
             "An effect card is drawn o discovered",
             "A condition card is drawn or discovered",
             "A Bumandow card is used or triggers its play effect",
-            "You, CURRENT PLAYER, choose this condition for me. Anything, really. Even if it's oddly specific.",
-            "ThE UnExPeCtEd! Draw a condition and whenever it is met, swap it for another random condition. It's changing :)"
+            "You, CURRENT PLAYER, choose this condition for me. Anything, really.",
+            "The unexpected. Draw a condition and whenever it is met, swap it for another random condition. It's changing :)"
         ],
         "hesif": [
             "Blood drops are used or lost",
