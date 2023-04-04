@@ -18,7 +18,7 @@
                 "top": 50,
                 "useText": "Draw a card.",
                 "flavourText": "The library is open to all, but only the wise can find what they seek.",
-                "playText": "Whenever cards are drawn from other source, charge 1. Uncharge 5 to draw a card."
+                "playText": "Whenever cards are drawn from other source, charge 1. Uncharge 4 to draw a card."
             },
             {
                 "name": "Lake of Purity",
