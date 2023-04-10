@@ -7,7 +7,7 @@ const WORD_WRAP_THRESHOLD = 42;
 const CARD_BODY_LINE_APPROXIMATED_LENGTH = 25;
 const CARD_FLAVOUR_LINE_APPROXIMATED_LENGTH = 18;
 const CARD_BODY_LINE_HEIGHT = 6;
-const VERSION = '2.1.2';
+const VERSION = '2.1.3';
 
 const lords = {
   gaidda: {
@@ -112,7 +112,7 @@ function getFlavourTextBuffer(text, lord) {
 }
 
 function getVersionText() {
-  return getTextBuffer(`Six Favors by PuppedToy - v${VERSION}`, 'white', {
+  return getTextBuffer(`Bumandow by PuppedToy - v${VERSION}`, 'white', {
     textHeight: 20,
     textWidth: 78,
     fontSize: 2,

@@ -107,9 +107,9 @@
                 "rarity": "legendary",
                 "cost": 16,
                 "hp": 6,
-                "useText": "Draw a card from any graveyard 3 times.",
+                "useText": "Draw 2 cards and a draw card from any graveyard.",
                 "flavourText": "Wanta is deeply connected to everything in the forest. Even the dead.",
-                "playText": "Before you draw, you can choose to draw from any graveyard or the discard pile instead. As an action, draw a card."
+                "playText": "Before you draw, you can choose to draw from any graveyard or the discard pile instead. As an action, deal 1 damage to a card you own to draw a card."
             }
         ],
         "noumi": [
@@ -228,7 +228,7 @@
                 "hp": 6,
                 "useText": "Give any amount of coins to a player to take control of a card they own worth double the value paid.",
                 "flavourText": "Veynu was very good at math when she was a kid.",
-                "playText": "Whenever any player spends coins, you can pay the same amount to steal whatever they bought. As an action, give a card to steal 3 coins to that player."
+                "playText": "Whenever any player spends coins, you can pay the same amount to steal whatever they bought. As an action, give a card to steal 3 coins from that player."
             }
         ],
         "ysault": [
@@ -459,7 +459,7 @@
                 "top": -60,
                 "useText": "See 6. Then, request 3 cards.",
                 "flavourText": "He can see through walls. Just saying.",
-                "playText": "Before you draw, you can choose to discover or request a card instead. At the end of the turn, alter the future 9. As an action, see a player's hand."
+                "playText": "Before you draw, you can choose to discover or request a card instead. At the end of the turn, alter the future 3. As an action, spend 3 coins to see 3 and draw a card."
             }
         ],
         "bumandow": [
